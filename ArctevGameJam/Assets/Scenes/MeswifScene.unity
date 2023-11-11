@@ -662,11 +662,9 @@ MonoBehaviour:
   iconYin: {fileID: 1573986726}
   iconYang: {fileID: 2000752854}
   walkSpeed: 2
-  smallJumpForce: 3
-  bigJumpForce: 6
-  jumpMultiplier: 1
-  fallMultiplier: 1
-  maxInputTime: 0.25
+  jumpForce: 7.5
+  jumpMultiplier: 1.5
+  fallMultiplier: 1.5
 --- !u!50 &1394137392
 Rigidbody2D:
   serializedVersion: 4
