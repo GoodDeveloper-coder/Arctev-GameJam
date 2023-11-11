@@ -665,7 +665,7 @@ MonoBehaviour:
   smallJumpForce: 3
   bigJumpForce: 6
   jumpMultiplier: 1
-  fallMultiplier: 1.5
+  fallMultiplier: 1
   maxInputTime: 0.25
 --- !u!50 &1394137392
 Rigidbody2D:
