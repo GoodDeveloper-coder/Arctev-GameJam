@@ -44,36 +44,42 @@ public class PlayerITmancik : MonoBehaviour
         {
             if(ActiveUpFloor && CanSwitch)
             {
-                //SwicthUpFloor();
-                Debug.Log("Switched Up");
-                //IndexOfFloor = 2;
-                ActiveDownFloor = true;
-                ActiveUpFloor = false;
-                this.transform.position = FloorDown.transform.position;
-                this.transform.localScale = new Vector3(1, -1, 1);
-                rb.gravityScale = -1;
-                CanSwitch = false;
-                StartCoroutine(SwitchTimeReload());
-                //this.transform.position = FloorDown.transform.position;
-                //this.transform.localScale = new Vector3(1, 1, 1);
-                //rb.gravityScale = 1;
+                if (onGround)
+                {
+                    //SwicthUpFloor();
+                    Debug.Log("Switched Up");
+                    //IndexOfFloor = 2;
+                    ActiveDownFloor = true;
+                    ActiveUpFloor = false;
+                    this.transform.position = FloorDown.transform.position;
+                    this.transform.localScale = new Vector3(1, -1, 1);
+                    rb.gravityScale = -1;
+                    CanSwitch = false;
+                    StartCoroutine(SwitchTimeReload());
+                    //this.transform.position = FloorDown.transform.position;
+                    //this.transform.localScale = new Vector3(1, 1, 1);
+                    //rb.gravityScale = 1;
+                }
             }
 
             if (ActiveDownFloor && CanSwitch)
             {
-                //SwicthDownFloor();
-                Debug.Log("Switched Down");
-                //IndexOfFloor = 1;
-                ActiveUpFloor = true;
-                ActiveDownFloor = false;
-                this.transform.position = FloorUp.transform.position;
-                this.transform.localScale = new Vector3(1, 1, 1);
-                rb.gravityScale = 1;
-                CanSwitch = false;
-                StartCoroutine(SwitchTimeReload());
-                //this.transform.position = FloorUp.transform.position;
-                //rb.gravityScale = 1;
-                //this.transform.localScale = new Vector3(1, -1, 1);
+                if (onGround)
+                {
+                    //SwicthDownFloor();
+                    Debug.Log("Switched Down");
+                    //IndexOfFloor = 1;
+                    ActiveUpFloor = true;
+                    ActiveDownFloor = false;
+                    this.transform.position = FloorUp.transform.position;
+                    this.transform.localScale = new Vector3(1, 1, 1);
+                    rb.gravityScale = 1;
+                    CanSwitch = false;
+                    StartCoroutine(SwitchTimeReload());
+                    //this.transform.position = FloorUp.transform.position;
+                    //rb.gravityScale = 1;
+                    //this.transform.localScale = new Vector3(1, -1, 1);
+                }
             }
         }
 
