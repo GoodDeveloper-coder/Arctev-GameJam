@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1703393690196787024}
   - component: {fileID: 1703393690196787025}
   m_Layer: 7
-  m_Name: Floor Yang
+  m_Name: Yang
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 1703393690940237328}
   - component: {fileID: 1703393690940237329}
   m_Layer: 6
-  m_Name: Floor Yin
+  m_Name: Yin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

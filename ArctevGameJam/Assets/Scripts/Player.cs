@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -11,17 +10,16 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject colliderYang;
     [SerializeField] private GameObject backgroundYin;
     [SerializeField] private GameObject backgroundYang;
+    [SerializeField] private GameObject textYin;
+    [SerializeField] private GameObject textYang;
     [SerializeField] private GameObject iconYin;
     [SerializeField] private GameObject iconYang;
-    [SerializeField] private TextMeshProUGUI[] scoreText;
 
     [SerializeField] private AudioSource musicYang;
     [SerializeField] private AudioSource musicYin;
     [SerializeField] private AudioSource musicGameOver;
 
     [SerializeField] private float cameraOffsetX;
-    [SerializeField] private float initialWalkSpeed;
-    [SerializeField] private float walkSpeedIncrementPerSecond;
     [SerializeField] private float jumpForce;
     [SerializeField] private float jumpMultiplier;
     [SerializeField] private float fallMultiplier;
@@ -32,8 +30,6 @@ public class Player : MonoBehaviour
     private bool onGround;
     private bool falling;
     private bool horizonFlipped;
-    private float walkSpeed;
-    private float score;
     private bool gameOver;
 
     // Start is called before the first frame update
@@ -41,14 +37,13 @@ public class Player : MonoBehaviour
     {
         playerYang.SetActive(false);
         backgroundYin.SetActive(false);
+        textYin.SetActive(false);
         iconYin.SetActive(false);
         musicYin.volume = 0;
         musicGameOver.volume = 0;
         rbYin = playerYin.GetComponent<Rigidbody2D>();
         rbYang = playerYang.GetComponent<Rigidbody2D>();
         animator = GetComponent<PlayerAnimation>();
-        foreach (TextMeshProUGUI text in scoreText) text.text = "0";
-        walkSpeed = initialWalkSpeed;
         //onGround = true;
     }
 
@@ -59,7 +54,7 @@ public class Player : MonoBehaviour
         Rigidbody2D rb = horizonFlipped ? rbYang : rbYin;
         cameraPosition.x = rb.position.x + cameraOffsetX;
         cameraPosition.y = rb.position.y;
-        Camera.main.transform.position = cameraPosition;
+        //Camera.main.transform.position = cameraPosition;
     }
 
     void FixedUpdate()
@@ -70,11 +65,15 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
+                Camera.main.projectionMatrix *= Matrix4x4.Scale(new Vector3(1, -1, 1));
+
                 horizonFlipped = !horizonFlipped;
                 playerYin.SetActive(!horizonFlipped);
                 playerYang.SetActive(horizonFlipped);
                 backgroundYin.SetActive(horizonFlipped);
                 backgroundYang.SetActive(!horizonFlipped);
+                textYin.SetActive(horizonFlipped);
+                textYang.SetActive(!horizonFlipped);
                 iconYin.SetActive(horizonFlipped);
                 iconYang.SetActive(!horizonFlipped);
                 rbYin.gravityScale *= -1;
@@ -94,10 +93,6 @@ public class Player : MonoBehaviour
             //else rb.MovePosition(rb.position + Vector2.right * walkSpeed * Time.deltaTime);
         }
         //else rb.MovePosition(rb.position + Vector2.right * walkSpeed * Time.deltaTime);
-        score += walkSpeed * Time.deltaTime;
-        foreach (TextMeshProUGUI text in scoreText) text.text = (int)score + "";
-        walkSpeed += walkSpeedIncrementPerSecond * Time.deltaTime;
-        animator.SetAnimationSpeedFactor(walkSpeed / initialWalkSpeed);
         //if (Mathf.Abs(walkInput) > 0.1f) rigidBody.AddForce(Vector2.right * walkInput * walkSpeed, ForceMode2D.Impulse);
         if (!falling && (horizonFlipped ? rb.velocity.y > 0 : rb.velocity.y < 0))
         {
@@ -130,5 +125,10 @@ public class Player : MonoBehaviour
     public void CollisionExit(GameObject collider)
     {
         if (onGround && onGround && collider == (horizonFlipped ? playerYang : playerYin)) onGround = false;
+    }
+
+    public bool GetGameOver()
+    {
+        return gameOver;
     }
 }

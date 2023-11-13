@@ -17,6 +17,8 @@ public class RoomGenerator : MonoBehaviour
     private GameObject nextRoom;
 
     private int currentRoomIndex;
+    private float speed;
+    private bool yin;
 
     // Start is called before the first frame update
     void Start()
@@ -24,16 +26,17 @@ public class RoomGenerator : MonoBehaviour
         currentRoomIndex = Random.Range(0, roomPrefabs.Length);
         currentRoom = startRoom;
         nextRoom = Instantiate(roomPrefabs[currentRoomIndex], transform.position + Vector3.right * roomLength, transform.rotation);
+        yin = true;
+        //SetHorizon();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float walkSpeed = 0;
-        transform.position -= Vector3.right * walkSpeed * Time.deltaTime;
-        if (previousRoom != null) previousRoom.transform.position -= Vector3.right * walkSpeed * Time.deltaTime;
-        currentRoom.transform.position -= Vector3.right * walkSpeed * Time.deltaTime;
-        nextRoom.transform.position -= Vector3.right * walkSpeed * Time.deltaTime;
+        transform.position -= Vector3.right * speed * Time.deltaTime;
+        if (previousRoom != null) previousRoom.transform.position -= Vector3.right * speed * Time.deltaTime;
+        currentRoom.transform.position -= Vector3.right * speed * Time.deltaTime;
+        nextRoom.transform.position -= Vector3.right * speed * Time.deltaTime;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -48,5 +51,29 @@ public class RoomGenerator : MonoBehaviour
         while (currentRoomIndex != r);
         currentRoomIndex = r;
         nextRoom = Instantiate(roomPrefabs[currentRoomIndex], transform.position + Vector3.right * roomLength, transform.rotation);
+    }
+
+    public void SetSpeed(float s)
+    {
+        speed = s;
+    }
+
+    public void Flip()
+    {
+        yin = !yin;
+        //SetHorizon();
+    }
+
+    private void SetHorizon()
+    {
+        if (previousRoom != null)
+        {
+            previousRoom.transform.Find("Yin").gameObject.SetActive(yin);
+            previousRoom.transform.Find("Yang").gameObject.SetActive(!yin);
+        }
+        currentRoom.transform.Find("Yin").gameObject.SetActive(yin);
+        currentRoom.transform.Find("Yang").gameObject.SetActive(!yin);
+        nextRoom.transform.Find("Yin").gameObject.SetActive(yin);
+        nextRoom.transform.Find("Yang").gameObject.SetActive(!yin);
     }
 }
