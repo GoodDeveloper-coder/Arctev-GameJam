@@ -15,6 +15,10 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject iconYang;
     [SerializeField] private TextMeshProUGUI[] scoreText;
 
+    [SerializeField] private AudioSource musicYang;
+    [SerializeField] private AudioSource musicYin;
+    [SerializeField] private AudioSource musicGameOver;
+
     [SerializeField] private float initialWalkSpeed;
     [SerializeField] private float walkSpeedIncrementPerSecond;
     [SerializeField] private float jumpForce;
@@ -35,6 +39,8 @@ public class Player : MonoBehaviour
     {
         playerYang.SetActive(false);
         backgroundYin.SetActive(false);
+        musicYin.volume = 0;
+        musicGameOver.volume = 0;
         rbYin = playerYin.GetComponent<Rigidbody2D>();
         rbYang = playerYang.GetComponent<Rigidbody2D>();
         animator = GetComponent<PlayerAnimation>();
@@ -73,6 +79,8 @@ public class Player : MonoBehaviour
                 if (horizonFlipped) rbYang.MovePosition(rbYin.position - Vector2.up * 0.86f);
                 else rbYin.MovePosition(rbYang.position + Vector2.up * 0.86f);
                 animator.PlayWalkAnimation(!horizonFlipped);
+                musicYang.volume = horizonFlipped ? 0 : 1;
+                musicYin.volume = horizonFlipped ? 1 : 0;
             }
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
@@ -102,6 +110,9 @@ public class Player : MonoBehaviour
         {
             iconYang.SetActive(false);
             iconYin.SetActive(false);
+            musicYang.volume = 0;
+            musicYin.volume = 0;
+            musicGameOver.volume = 1;
             gameOver = true;
         }
         else if (!onGround && collider == (horizonFlipped ? playerYang : playerYin))
