@@ -73,7 +73,6 @@ public class Player : MonoBehaviour
                 if (horizonFlipped) rbYang.MovePosition(rbYin.position - Vector2.up * 0.86f);
                 else rbYin.MovePosition(rbYang.position + Vector2.up * 0.86f);
                 animator.PlayWalkAnimation(!horizonFlipped);
-                walkSpeed += walkSpeedIncrementPerSecond * Time.deltaTime;
             }
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
@@ -86,6 +85,8 @@ public class Player : MonoBehaviour
         //else rb.MovePosition(rb.position + Vector2.right * walkSpeed * Time.deltaTime);
         score += walkSpeed * Time.deltaTime;
         foreach (TextMeshProUGUI text in scoreText) text.text = (int)score + "";
+        walkSpeed += walkSpeedIncrementPerSecond * Time.deltaTime;
+        animator.SetAnimationSpeedFactor(walkSpeed / initialWalkSpeed);
         //if (Mathf.Abs(walkInput) > 0.1f) rigidBody.AddForce(Vector2.right * walkInput * walkSpeed, ForceMode2D.Impulse);
         if (horizonFlipped ? rb.velocity.y > 0 : rb.velocity.y < 0)
         {

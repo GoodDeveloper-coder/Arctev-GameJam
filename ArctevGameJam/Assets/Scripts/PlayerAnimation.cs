@@ -11,14 +11,16 @@ public class PlayerAnimation : MonoBehaviour
     [SerializeField] private Sprite[] jumpSprites;
     [SerializeField] private Sprite[] fallSprites;
 
-    [SerializeField] private float animationSpeed;
+    [SerializeField] private float initialAnimationSpeed;
+
+    private float animationSpeedFactor;
     
     private bool yin;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        animationSpeedFactor = 1;
     }
 
     // Update is called once per frame
@@ -27,6 +29,11 @@ public class PlayerAnimation : MonoBehaviour
         
     }
     
+    public void SetAnimationSpeedFactor(float f)
+    {
+        animationSpeedFactor = f;
+    }
+
     public void PlayWalkAnimation(bool y)
     {
         yin = y;
@@ -55,7 +62,7 @@ public class PlayerAnimation : MonoBehaviour
         {
             (yin ? maskYin : maskYang).sprite = walkSprites[sprite];
             sprite = (sprite + 1) % walkSprites.Length;
-            yield return new WaitForSeconds(1f / animationSpeed);
+            yield return new WaitForSeconds(1f / (initialAnimationSpeed * animationSpeedFactor));
         }
     }
 
@@ -66,7 +73,7 @@ public class PlayerAnimation : MonoBehaviour
         {
             (yin ? maskYin : maskYang).sprite = jumpSprites[sprite];
             sprite++;
-            yield return new WaitForSeconds(1f / animationSpeed);
+            yield return new WaitForSeconds(1f / (initialAnimationSpeed * animationSpeedFactor));
         }
     }
 
@@ -77,7 +84,7 @@ public class PlayerAnimation : MonoBehaviour
         {
             (yin ? maskYin : maskYang).sprite = fallSprites[sprite];
             sprite++;
-            yield return new WaitForSeconds(1f / animationSpeed);
+            yield return new WaitForSeconds(1f / (initialAnimationSpeed * animationSpeedFactor));
         }
     }
 }

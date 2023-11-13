@@ -2174,7 +2174,7 @@ MonoBehaviour:
   scoreText:
   - {fileID: 1715221127}
   - {fileID: 1495743811}
-  initialWalkSpeed: 5
+  initialWalkSpeed: 2.5
   walkSpeedIncrementPerSecond: 0.05
   jumpForce: 5
   jumpMultiplier: 1
@@ -2208,7 +2208,7 @@ MonoBehaviour:
   - {fileID: 1806804231, guid: 90cdeddbcb954a74491a1415fc65da25, type: 3}
   - {fileID: -1037244522, guid: 90cdeddbcb954a74491a1415fc65da25, type: 3}
   - {fileID: -40458725, guid: 90cdeddbcb954a74491a1415fc65da25, type: 3}
-  animationSpeed: 10
+  initialAnimationSpeed: 10
 --- !u!1 &1425325089
 GameObject:
   m_ObjectHideFlags: 0
