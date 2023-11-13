@@ -2606,9 +2606,9 @@ MonoBehaviour:
   scoreText:
   - {fileID: 1715221127}
   - {fileID: 1495743811}
-  musicYang: {fileID: 0}
-  musicYin: {fileID: 0}
-  musicGameOver: {fileID: 0}
+  musicYang: {fileID: 310911654}
+  musicYin: {fileID: 1132176872}
+  musicGameOver: {fileID: 578383711}
   initialWalkSpeed: 2.5
   walkSpeedIncrementPerSecond: 0.05
   jumpForce: 5

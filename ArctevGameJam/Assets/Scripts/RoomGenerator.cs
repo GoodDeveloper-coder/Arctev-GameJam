@@ -22,7 +22,8 @@ public class RoomGenerator : MonoBehaviour
     void Start()
     {
         currentRoomIndex = Random.Range(0, roomPrefabs.Length);
-        nextRoom = Instantiate(roomPrefabs[currentRoomIndex], transform.position, transform.rotation);
+        currentRoom = startRoom;
+        nextRoom = Instantiate(roomPrefabs[currentRoomIndex], transform.position + Vector3.right * roomLength, transform.rotation);
     }
 
     // Update is called once per frame
@@ -46,6 +47,6 @@ public class RoomGenerator : MonoBehaviour
         do r = Random.Range(0, roomPrefabs.Length);
         while (currentRoomIndex != r);
         currentRoomIndex = r;
-        nextRoom = Instantiate(roomPrefabs[currentRoomIndex], transform.position, transform.rotation);
+        nextRoom = Instantiate(roomPrefabs[currentRoomIndex], transform.position + Vector3.right * roomLength, transform.rotation);
     }
 }

@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
     {
         playerYang.SetActive(false);
         backgroundYin.SetActive(false);
+        iconYin.SetActive(false);
         musicYin.volume = 0;
         musicGameOver.volume = 0;
         rbYin = playerYin.GetComponent<Rigidbody2D>();
