@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioSource musicYin;
     [SerializeField] private AudioSource musicGameOver;
 
+    [SerializeField] private float cameraOffsetX;
     [SerializeField] private float initialWalkSpeed;
     [SerializeField] private float walkSpeedIncrementPerSecond;
     [SerializeField] private float jumpForce;
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rbYang;
     private PlayerAnimation animator;
     private bool onGround;
+    private bool falling;
     private bool horizonFlipped;
     private float walkSpeed;
     private float score;
@@ -55,7 +57,7 @@ public class Player : MonoBehaviour
     {
         Vector3 cameraPosition = Camera.main.transform.position;
         Rigidbody2D rb = horizonFlipped ? rbYang : rbYin;
-        cameraPosition.x = rb.position.x + 5;
+        cameraPosition.x = rb.position.x + cameraOffsetX;
         cameraPosition.y = rb.position.y;
         Camera.main.transform.position = cameraPosition;
     }
@@ -77,8 +79,8 @@ public class Player : MonoBehaviour
                 iconYang.SetActive(!horizonFlipped);
                 rbYin.gravityScale *= -1;
                 rbYang.gravityScale *= -1;
-                if (horizonFlipped) rbYang.MovePosition(rbYin.position - Vector2.up * 0.86f);
-                else rbYin.MovePosition(rbYang.position + Vector2.up * 0.86f);
+                if (horizonFlipped) rbYang.MovePosition(rbYin.position - Vector2.up * 0.9f);
+                else rbYin.MovePosition(rbYang.position + Vector2.up * 0.9f);
                 animator.PlayWalkAnimation(!horizonFlipped);
                 musicYang.volume = horizonFlipped ? 0 : 1;
                 musicYin.volume = horizonFlipped ? 1 : 0;
@@ -97,10 +99,11 @@ public class Player : MonoBehaviour
         walkSpeed += walkSpeedIncrementPerSecond * Time.deltaTime;
         animator.SetAnimationSpeedFactor(walkSpeed / initialWalkSpeed);
         //if (Mathf.Abs(walkInput) > 0.1f) rigidBody.AddForce(Vector2.right * walkInput * walkSpeed, ForceMode2D.Impulse);
-        if (horizonFlipped ? rb.velocity.y > 0 : rb.velocity.y < 0)
+        if (!falling && (horizonFlipped ? rb.velocity.y > 0 : rb.velocity.y < 0))
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * (horizonFlipped ? -1 : 1) * Time.deltaTime;
-            animator.PlayFallAnimation(!horizonFlipped);
+            animator.SetFallSprite(!horizonFlipped);
+            falling = true;
         }
         else if (horizonFlipped ? rb.velocity.y < 0 : rb.velocity.y > 0) rb.velocity += Vector2.up * Physics2D.gravity.y * (jumpMultiplier - 1) * (horizonFlipped ? -1 : 1) * Time.deltaTime;
     }
@@ -119,6 +122,7 @@ public class Player : MonoBehaviour
         else if (!onGround && collider == (horizonFlipped ? playerYang : playerYin))
         {
             onGround = true;
+            falling = false;
             animator.PlayWalkAnimation(!horizonFlipped);
         }
     }

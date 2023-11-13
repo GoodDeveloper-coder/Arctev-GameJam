@@ -9,7 +9,7 @@ public class PlayerAnimation : MonoBehaviour
 
     [SerializeField] private Sprite[] walkSprites;
     [SerializeField] private Sprite[] jumpSprites;
-    [SerializeField] private Sprite[] fallSprites;
+    [SerializeField] private Sprite fallSprite;
 
     [SerializeField] private float initialAnimationSpeed;
 
@@ -48,11 +48,11 @@ public class PlayerAnimation : MonoBehaviour
         StartCoroutine(Jump());
     }
 
-    public void PlayFallAnimation(bool y)
+    public void SetFallSprite(bool y)
     {
         yin = y;
         StopAllCoroutines();
-        StartCoroutine(Fall());
+        (yin ? maskYin : maskYang).sprite = fallSprite;
     }
 
     private IEnumerator Walk()
@@ -72,17 +72,6 @@ public class PlayerAnimation : MonoBehaviour
         while (sprite < jumpSprites.Length)
         {
             (yin ? maskYin : maskYang).sprite = jumpSprites[sprite];
-            sprite++;
-            yield return new WaitForSeconds(1f / (initialAnimationSpeed * animationSpeedFactor));
-        }
-    }
-
-    private IEnumerator Fall()
-    {
-        int sprite = 0;
-        while (sprite < fallSprites.Length)
-        {
-            (yin ? maskYin : maskYang).sprite = fallSprites[sprite];
             sprite++;
             yield return new WaitForSeconds(1f / (initialAnimationSpeed * animationSpeedFactor));
         }
