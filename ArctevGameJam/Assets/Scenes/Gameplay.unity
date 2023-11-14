@@ -160,6 +160,7 @@ MonoBehaviour:
   - {fileID: 1495743811}
   initialSpeed: 2.5
   speedIncrementPerSecond: 0.05
+  score: 0
 --- !u!4 &214290307
 Transform:
   m_ObjectHideFlags: 0
@@ -639,7 +640,7 @@ GameObject:
   - component: {fileID: 389905158}
   m_Layer: 7
   m_Name: Player Yang
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1244,7 +1245,7 @@ GameObject:
   - component: {fileID: 622140085}
   m_Layer: 6
   m_Name: Player Yin
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
