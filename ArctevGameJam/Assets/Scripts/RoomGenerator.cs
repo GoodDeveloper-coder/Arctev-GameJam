@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class RoomGenerator : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
-
     [SerializeField] private GameObject[] roomPrefabs;
 
     [SerializeField] private GameObject startRoom;
@@ -22,9 +20,10 @@ public class RoomGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentRoomIndex = Random.Range(0, roomPrefabs.Length);
-        currentRoom = startRoom;
-        nextRoom = Instantiate(roomPrefabs[currentRoomIndex], transform.position + Vector3.right * roomLength, transform.rotation);
+        //currentRoomIndex = Random.Range(0, roomPrefabs.Length);
+        //currentRoom = startRoom;
+        //nextRoom = Instantiate(roomPrefabs[currentRoomIndex], transform.position + Vector3.right * roomLength, transform.rotation);
+        nextRoom = startRoom;
     }
 
     // Update is called once per frame
@@ -32,13 +31,13 @@ public class RoomGenerator : MonoBehaviour
     {
         transform.position -= Vector3.right * speed * Time.deltaTime;
         if (previousRoom != null) previousRoom.transform.position -= Vector3.right * speed * Time.deltaTime;
-        currentRoom.transform.position -= Vector3.right * speed * Time.deltaTime;
+        if (currentRoom != null) currentRoom.transform.position -= Vector3.right * speed * Time.deltaTime;
         nextRoom.transform.position -= Vector3.right * speed * Time.deltaTime;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.gameObject != player) return;
+        if (other.GetComponent<PlayerCollider>() == null) return;
         transform.position += Vector3.right * roomLength;
         if (previousRoom != null) Destroy(previousRoom);
         previousRoom = currentRoom;
@@ -47,7 +46,7 @@ public class RoomGenerator : MonoBehaviour
         do r = Random.Range(0, roomPrefabs.Length);
         while (currentRoomIndex == r);
         currentRoomIndex = r;
-        nextRoom = Instantiate(roomPrefabs[currentRoomIndex], transform.position + Vector3.right * roomLength, transform.rotation);
+        nextRoom = Instantiate(roomPrefabs[currentRoomIndex], transform.position, transform.rotation);
     }
 
     public void SetSpeed(float s)
@@ -62,8 +61,13 @@ public class RoomGenerator : MonoBehaviour
             previousRoom.transform.Find("Yin").gameObject.SetActive(yin);
             previousRoom.transform.Find("Yang").gameObject.SetActive(!yin);
         }
-        currentRoom.transform.Find("Yin").gameObject.SetActive(yin);
-        currentRoom.transform.Find("Yang").gameObject.SetActive(!yin);
+        //currentRoom.transform.Find("Yin").gameObject.SetActive(yin);
+        //currentRoom.transform.Find("Yang").gameObject.SetActive(!yin);
+        if (currentRoom != null)
+        {
+            currentRoom.transform.Find("Yin").gameObject.SetActive(yin);
+            currentRoom.transform.Find("Yang").gameObject.SetActive(!yin);
+        }
         nextRoom.transform.Find("Yin").gameObject.SetActive(yin);
         nextRoom.transform.Find("Yang").gameObject.SetActive(!yin);
     }
