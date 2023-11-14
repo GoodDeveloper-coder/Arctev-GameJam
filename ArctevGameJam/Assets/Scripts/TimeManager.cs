@@ -33,10 +33,12 @@ public class TimeManager : MonoBehaviour
         if (player.GetGameOver())
         {
             stop = true;
+            generator.SetSpeed(0);
             return;
         }
         score += currentSpeed * Time.deltaTime;
         currentSpeed += speedIncrementPerSecond * Time.deltaTime;
+        generator.SetSpeed(currentSpeed);
         animator.SetAnimationSpeedFactor(currentSpeed / initialSpeed);
         foreach (TextMeshProUGUI text in scoreText) text.text = (int)score + "";
     }

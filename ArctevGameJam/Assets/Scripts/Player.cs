@@ -8,12 +8,13 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject playerYang;
     [SerializeField] private GameObject colliderYin;
     [SerializeField] private GameObject colliderYang;
-    [SerializeField] private GameObject backgroundYin;
-    [SerializeField] private GameObject backgroundYang;
     [SerializeField] private GameObject textYin;
     [SerializeField] private GameObject textYang;
     [SerializeField] private GameObject iconYin;
     [SerializeField] private GameObject iconYang;
+    [SerializeField] private GameObject gameOverScreen;
+
+    [SerializeField] private RoomGenerator generator;
 
     [SerializeField] private AudioSource musicYang;
     [SerializeField] private AudioSource musicYin;
@@ -36,13 +37,14 @@ public class Player : MonoBehaviour
     void Start()
     {
         playerYang.SetActive(false);
-        backgroundYin.SetActive(false);
         textYin.SetActive(false);
         iconYin.SetActive(false);
+        gameOverScreen.SetActive(false);
         musicYin.volume = 0;
         musicGameOver.volume = 0;
         rbYin = playerYin.GetComponent<Rigidbody2D>();
         rbYang = playerYang.GetComponent<Rigidbody2D>();
+        generator.SetYin(true);
         animator = GetComponent<PlayerAnimation>();
         //onGround = true;
     }
@@ -66,12 +68,9 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
                 Camera.main.projectionMatrix *= Matrix4x4.Scale(new Vector3(1, -1, 1));
-
                 horizonFlipped = !horizonFlipped;
                 playerYin.SetActive(!horizonFlipped);
                 playerYang.SetActive(horizonFlipped);
-                backgroundYin.SetActive(horizonFlipped);
-                backgroundYang.SetActive(!horizonFlipped);
                 textYin.SetActive(horizonFlipped);
                 textYang.SetActive(!horizonFlipped);
                 iconYin.SetActive(horizonFlipped);
@@ -80,6 +79,7 @@ public class Player : MonoBehaviour
                 rbYang.gravityScale *= -1;
                 if (horizonFlipped) rbYang.MovePosition(rbYin.position - Vector2.up * 0.9f);
                 else rbYin.MovePosition(rbYang.position + Vector2.up * 0.9f);
+                generator.SetYin(!horizonFlipped);
                 animator.PlayWalkAnimation(!horizonFlipped);
                 musicYang.volume = horizonFlipped ? 0 : 1;
                 musicYin.volume = horizonFlipped ? 1 : 0;
@@ -109,6 +109,7 @@ public class Player : MonoBehaviour
         {
             iconYang.SetActive(false);
             iconYin.SetActive(false);
+            gameOverScreen.SetActive(true);
             musicYang.volume = 0;
             musicYin.volume = 0;
             musicGameOver.volume = 1;

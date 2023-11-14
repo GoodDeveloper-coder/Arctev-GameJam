@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class RoomGenerator : MonoBehaviour
 {
-    [SerializeField] GameObject player;
+    [SerializeField] private GameObject player;
 
-    [SerializeField] GameObject[] roomPrefabs;
+    [SerializeField] private GameObject[] roomPrefabs;
 
-    [SerializeField] GameObject startRoom;
+    [SerializeField] private GameObject startRoom;
 
-    [SerializeField] float roomLength;
+    [SerializeField] private float roomLength;
 
     private GameObject previousRoom;
     private GameObject currentRoom;
@@ -18,7 +18,6 @@ public class RoomGenerator : MonoBehaviour
 
     private int currentRoomIndex;
     private float speed;
-    private bool yin;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +25,6 @@ public class RoomGenerator : MonoBehaviour
         currentRoomIndex = Random.Range(0, roomPrefabs.Length);
         currentRoom = startRoom;
         nextRoom = Instantiate(roomPrefabs[currentRoomIndex], transform.position + Vector3.right * roomLength, transform.rotation);
-        yin = true;
-        //SetHorizon();
     }
 
     // Update is called once per frame
@@ -48,7 +45,7 @@ public class RoomGenerator : MonoBehaviour
         currentRoom = nextRoom;
         int r;
         do r = Random.Range(0, roomPrefabs.Length);
-        while (currentRoomIndex != r);
+        while (currentRoomIndex == r);
         currentRoomIndex = r;
         nextRoom = Instantiate(roomPrefabs[currentRoomIndex], transform.position + Vector3.right * roomLength, transform.rotation);
     }
@@ -58,13 +55,7 @@ public class RoomGenerator : MonoBehaviour
         speed = s;
     }
 
-    public void Flip()
-    {
-        yin = !yin;
-        //SetHorizon();
-    }
-
-    private void SetHorizon()
+    public void SetYin(bool yin)
     {
         if (previousRoom != null)
         {
