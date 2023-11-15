@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carrotSpeed: 0
+  CarrotAddScore: 20
 --- !u!60 &3857886786596353522
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -861,6 +862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carrotSpeed: 0
+  CarrotAddScore: 20
 --- !u!60 &2169548005399389116
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1408,15 +1410,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3763107620112857593}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.57, y: 1.57, z: -0.24445902}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 21.04, y: -1.33, z: -0.24445902}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8484978063695907671}
   m_Father: {fileID: 3146090847262590511}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!50 &2248854131452772676
 Rigidbody2D:
   serializedVersion: 4
@@ -1451,6 +1453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carrotSpeed: 0
+  CarrotAddScore: 20
 --- !u!60 &2067246714904315036
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1554,6 +1557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carrotSpeed: 0
+  CarrotAddScore: 20
 --- !u!60 &7391492694438134251
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1657,6 +1661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carrotSpeed: 0
+  CarrotAddScore: 20
 --- !u!60 &7047595288543100405
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2184,15 +2189,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5298871928497037428}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.46, y: 2.38, z: -0.24445902}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0.46, y: -3.47, z: -0.24445902}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8104506169232214209}
   m_Father: {fileID: 3146090847262590511}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!50 &91234747938388121
 Rigidbody2D:
   serializedVersion: 4
@@ -2227,6 +2232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carrotSpeed: 0
+  CarrotAddScore: 20
 --- !u!60 &7088582566912366187
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2393,15 +2399,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5517435715750167180}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.89, y: 2.46, z: -0.24445902}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 10.89, y: -3.22, z: -0.24445902}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1497964388437210794}
   m_Father: {fileID: 3146090847262590511}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!50 &2234337057151010617
 Rigidbody2D:
   serializedVersion: 4
@@ -2436,6 +2442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carrotSpeed: 0
+  CarrotAddScore: 20
 --- !u!60 &8782611274699917798
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2607,15 +2614,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6442016733066496657}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.1, y: 3.38, z: -0.24445902}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 6.1, y: -4.09, z: -0.24445902}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9219540283226069818}
   m_Father: {fileID: 3146090847262590511}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!50 &8923376027024258910
 Rigidbody2D:
   serializedVersion: 4
@@ -2650,6 +2657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carrotSpeed: 0
+  CarrotAddScore: 20
 --- !u!60 &8758730045857490042
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2816,15 +2824,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6625127978223938257}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.207313, y: 1.3754275, z: -0.24445902}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: -10.207313, y: -1.32, z: -0.24445902}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6625127976581864278}
   m_Father: {fileID: 3146090847262590511}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!50 &3459124334282423244
 Rigidbody2D:
   serializedVersion: 4
@@ -2859,6 +2867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carrotSpeed: 0
+  CarrotAddScore: 20
 --- !u!60 &6433452612034259853
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2962,6 +2971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carrotSpeed: 0
+  CarrotAddScore: 20
 --- !u!60 &1577957170268408929
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3214,6 +3224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carrotSpeed: 0
+  CarrotAddScore: 20
 --- !u!60 &7007550095714507565
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3317,6 +3328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carrotSpeed: 0
+  CarrotAddScore: 20
 --- !u!60 &4202930787097010973
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3483,15 +3495,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7398958766710991635}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.45, y: 1.95, z: -0.24445902}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 16.45, y: -2.03, z: -0.24445902}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7585996828438332230}
   m_Father: {fileID: 3146090847262590511}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!50 &4054490885983440722
 Rigidbody2D:
   serializedVersion: 4
@@ -3526,6 +3538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carrotSpeed: 0
+  CarrotAddScore: 20
 --- !u!60 &7221682162224095968
 PolygonCollider2D:
   m_ObjectHideFlags: 0
