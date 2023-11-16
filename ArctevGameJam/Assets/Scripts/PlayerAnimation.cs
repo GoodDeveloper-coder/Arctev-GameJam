@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
+    [SerializeField] private SpriteMask maskYin;
+    [SerializeField] private SpriteMask maskYang;
+
     [SerializeField] private Sprite[] walkSprites;
     [SerializeField] private Sprite[] jumpSprites;
     [SerializeField] private Sprite fallSprite;
 
     [SerializeField] private float initialAnimationSpeed;
-
-    private SpriteRenderer sr;
 
     private float animationSpeedFactor;
     
@@ -19,7 +20,6 @@ public class PlayerAnimation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
         animationSpeedFactor = 1;
     }
 
@@ -34,22 +34,25 @@ public class PlayerAnimation : MonoBehaviour
         animationSpeedFactor = f;
     }
 
-    public void PlayWalkAnimation()
+    public void PlayWalkAnimation(bool y)
     {
+        yin = y;
         StopAllCoroutines();
         StartCoroutine(Walk());
     }
 
-    public void PlayJumpAnimation()
+    public void PlayJumpAnimation(bool y)
     {
+        yin = y;
         StopAllCoroutines();
         StartCoroutine(Jump());
     }
 
-    public void SetFallSprite()
+    public void SetFallSprite(bool y)
     {
+        yin = y;
         StopAllCoroutines();
-        sr.sprite = fallSprite;
+        (yin ? maskYin : maskYang).sprite = fallSprite;
     }
 
     private IEnumerator Walk()
@@ -57,7 +60,7 @@ public class PlayerAnimation : MonoBehaviour
         int sprite = 0;
         while (sprite < walkSprites.Length)
         {
-            sr.sprite = walkSprites[sprite];
+            (yin ? maskYin : maskYang).sprite = walkSprites[sprite];
             sprite = (sprite + 1) % walkSprites.Length;
             yield return new WaitForSeconds(1f / (initialAnimationSpeed * animationSpeedFactor));
         }
@@ -68,7 +71,7 @@ public class PlayerAnimation : MonoBehaviour
         int sprite = 0;
         while (sprite < jumpSprites.Length)
         {
-            sr.sprite = jumpSprites[sprite];
+            (yin ? maskYin : maskYang).sprite = jumpSprites[sprite];
             sprite++;
             yield return new WaitForSeconds(1f / (initialAnimationSpeed * animationSpeedFactor));
         }
