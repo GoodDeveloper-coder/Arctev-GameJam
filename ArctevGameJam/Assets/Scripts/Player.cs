@@ -6,8 +6,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private GameObject playerYin;
     [SerializeField] private GameObject playerYang;
-    [SerializeField] private GameObject colliderYin;
-    [SerializeField] private GameObject colliderYang;
+    [SerializeField] private GameObject backgroundYin;
+    [SerializeField] private GameObject backgroundYang;
     [SerializeField] private GameObject textYin;
     [SerializeField] private GameObject textYang;
     [SerializeField] private GameObject iconYin;
@@ -27,7 +27,8 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rbYin;
     private Rigidbody2D rbYang;
-    private PlayerAnimation animator;
+    private PlayerAnimation animatorYin;
+    private PlayerAnimation animatorYang;
     private bool onGround;
     private bool falling;
     private bool horizonFlipped;
@@ -37,6 +38,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         playerYang.SetActive(false);
+        backgroundYin.SetActive(false);
         textYin.SetActive(false);
         iconYin.SetActive(false);
         gameOverScreen.SetActive(false);
@@ -45,7 +47,8 @@ public class Player : MonoBehaviour
         rbYin = playerYin.GetComponent<Rigidbody2D>();
         rbYang = playerYang.GetComponent<Rigidbody2D>();
         generator.SetYin(true);
-        animator = GetComponent<PlayerAnimation>();
+        animatorYin = playerYin.GetComponent<PlayerAnimation>();
+        animatorYang = playerYang.GetComponent<PlayerAnimation>();
         //onGround = true;
     }
 
@@ -56,7 +59,7 @@ public class Player : MonoBehaviour
         Rigidbody2D rb = horizonFlipped ? rbYang : rbYin;
         cameraPosition.x = rb.position.x + cameraOffsetX;
         cameraPosition.y = rb.position.y;
-        //Camera.main.transform.position = cameraPosition;
+        Camera.main.transform.position = cameraPosition;
     }
 
     void FixedUpdate()
@@ -67,10 +70,12 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
-                Camera.main.projectionMatrix *= Matrix4x4.Scale(new Vector3(1, -1, 1));
+                //Camera.main.projectionMatrix *= Matrix4x4.Scale(new Vector3(1, -1, 1));
                 horizonFlipped = !horizonFlipped;
                 playerYin.SetActive(!horizonFlipped);
                 playerYang.SetActive(horizonFlipped);
+                backgroundYin.SetActive(horizonFlipped);
+                backgroundYang.SetActive(!horizonFlipped);
                 textYin.SetActive(horizonFlipped);
                 textYang.SetActive(!horizonFlipped);
                 iconYin.SetActive(horizonFlipped);
@@ -80,7 +85,7 @@ public class Player : MonoBehaviour
                 if (horizonFlipped) rbYang.MovePosition(rbYin.position - Vector2.up * 0.9f);
                 else rbYin.MovePosition(rbYang.position + Vector2.up * 0.9f);
                 generator.SetYin(!horizonFlipped);
-                animator.PlayWalkAnimation(!horizonFlipped);
+                (horizonFlipped ? animatorYang : animatorYin).PlayWalkAnimation();
                 musicYang.volume = horizonFlipped ? 0 : 1;
                 musicYin.volume = horizonFlipped ? 1 : 0;
             }
@@ -88,7 +93,7 @@ public class Player : MonoBehaviour
             {
                 rb.velocity = new Vector2();
                 rb.AddForce(Vector2.up * jumpForce * (horizonFlipped ? -1 : 1), ForceMode2D.Impulse);
-                animator.PlayJumpAnimation(!horizonFlipped);
+                (horizonFlipped ? animatorYang : animatorYin).PlayJumpAnimation();
             }
             //else rb.MovePosition(rb.position + Vector2.right * walkSpeed * Time.deltaTime);
         }
@@ -97,39 +102,52 @@ public class Player : MonoBehaviour
         if (!falling && (horizonFlipped ? rb.velocity.y > 0 : rb.velocity.y < 0))
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * (horizonFlipped ? -1 : 1) * Time.deltaTime;
-            animator.SetFallSprite(!horizonFlipped);
+            (horizonFlipped ? animatorYang : animatorYin).SetFallSprite();
             falling = true;
         }
         else if (horizonFlipped ? rb.velocity.y < 0 : rb.velocity.y > 0) rb.velocity += Vector2.up * Physics2D.gravity.y * (jumpMultiplier - 1) * (horizonFlipped ? -1 : 1) * Time.deltaTime;
     }
 
-    public void CollisionEnter(GameObject collider)
+    public void SetAnimationSpeedFactor(float factor)
     {
-        if (collider == (horizonFlipped ? colliderYang : colliderYin))
-        {
-            iconYang.SetActive(false);
-            iconYin.SetActive(false);
-            gameOverScreen.SetActive(true);
-            musicYang.volume = 0;
-            musicYin.volume = 0;
-            musicGameOver.volume = 1;
-            gameOver = true;
-        }
-        else if (!onGround && collider == (horizonFlipped ? playerYang : playerYin))
+        animatorYin.SetAnimationSpeedFactor(factor);
+        animatorYang.SetAnimationSpeedFactor(factor);
+    }
+
+    public void CollisionEnter(Collision2D other)
+    {
+        if (other.gameObject.tag == "Hazard") SetGameOver();
+        else if (!onGround && other.gameObject.tag == "Platform")
         {
             onGround = true;
             falling = false;
-            animator.PlayWalkAnimation(!horizonFlipped);
+            (horizonFlipped ? animatorYang : animatorYin).PlayWalkAnimation();
         }
     }
 
-    public void CollisionExit(GameObject collider)
+    public void CollisionExit(Collision2D other)
     {
-        if (onGround && onGround && collider == (horizonFlipped ? playerYang : playerYin)) onGround = false;
+        if (onGround && other.gameObject.tag == "Platform") onGround = false;
+    }
+
+    public void TriggerEnter(Collider2D other)
+    {
+        if (other.gameObject.tag == "Platform" || other.gameObject.tag == "Hazard") SetGameOver();
     }
 
     public bool GetGameOver()
     {
         return gameOver;
+    }
+
+    private void SetGameOver()
+    {
+        iconYang.SetActive(false);
+        iconYin.SetActive(false);
+        gameOverScreen.SetActive(true);
+        musicYang.volume = 0;
+        musicYin.volume = 0;
+        musicGameOver.volume = 1;
+        gameOver = true;
     }
 }

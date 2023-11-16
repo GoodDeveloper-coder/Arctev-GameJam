@@ -2254,7 +2254,7 @@ GameObject:
   - component: {fileID: 8282076382920185013}
   m_Layer: 6
   m_Name: Platform Yin (5)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2365,7 +2365,7 @@ GameObject:
   - component: {fileID: 8282076383137896631}
   m_Layer: 7
   m_Name: Platform Yang (6)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2476,7 +2476,7 @@ GameObject:
   - component: {fileID: 8282076383334807972}
   m_Layer: 6
   m_Name: Platform Yin (8)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2587,7 +2587,7 @@ GameObject:
   - component: {fileID: 8282076383433178751}
   m_Layer: 7
   m_Name: Platform Yang (2)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2731,7 +2731,7 @@ GameObject:
   - component: {fileID: 8282076383672868272}
   m_Layer: 6
   m_Name: Platform Yin (4)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2842,7 +2842,7 @@ GameObject:
   - component: {fileID: 8282076383696784653}
   m_Layer: 7
   m_Name: Platform Yang (1)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2953,7 +2953,7 @@ GameObject:
   - component: {fileID: 8282076383768257186}
   m_Layer: 7
   m_Name: Platform Yang (3)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3064,7 +3064,7 @@ GameObject:
   - component: {fileID: 8282076383792532239}
   m_Layer: 6
   m_Name: Platform Yin (1)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3175,7 +3175,7 @@ GameObject:
   - component: {fileID: 8282076383839000736}
   m_Layer: 7
   m_Name: Platform Yang (8)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3286,7 +3286,7 @@ GameObject:
   - component: {fileID: 8282076383939437707}
   m_Layer: 6
   m_Name: Platform Yin (6)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3437,7 +3437,7 @@ GameObject:
   - component: {fileID: 8282076384473614963}
   m_Layer: 6
   m_Name: Platform Yin (2)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3548,7 +3548,7 @@ GameObject:
   - component: {fileID: 8282076384589973845}
   m_Layer: 7
   m_Name: Platform Yang (7)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3659,7 +3659,7 @@ GameObject:
   - component: {fileID: 8282076384768322777}
   m_Layer: 7
   m_Name: Platform Yang (4)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3770,7 +3770,7 @@ GameObject:
   - component: {fileID: 8282076384791824235}
   m_Layer: 7
   m_Name: Platform Yang (5)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3881,7 +3881,7 @@ GameObject:
   - component: {fileID: 8282076384824776800}
   m_Layer: 6
   m_Name: Platform Yin (7)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3992,7 +3992,7 @@ GameObject:
   - component: {fileID: 8282076384857881012}
   m_Layer: 6
   m_Name: Platform Yin (3)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

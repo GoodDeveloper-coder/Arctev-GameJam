@@ -13,16 +13,13 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private float initialSpeed;
     [SerializeField] private float speedIncrementPerSecond;
 
-    private PlayerAnimation animator;
-
     private float currentSpeed;
-    public float score;
+    private float score;
     private bool stop;
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = player.gameObject.GetComponent<PlayerAnimation>();
         currentSpeed = initialSpeed;
     }
 
@@ -39,7 +36,13 @@ public class TimeManager : MonoBehaviour
         score += currentSpeed * Time.deltaTime;
         currentSpeed += speedIncrementPerSecond * Time.deltaTime;
         generator.SetSpeed(currentSpeed);
-        animator.SetAnimationSpeedFactor(currentSpeed / initialSpeed);
+        player.SetAnimationSpeedFactor(currentSpeed / initialSpeed);
+        foreach (TextMeshProUGUI text in scoreText) text.text = (int)score + "";
+    }
+
+    public void AddScore(float points)
+    {
+        score += points;
         foreach (TextMeshProUGUI text in scoreText) text.text = (int)score + "";
     }
 }

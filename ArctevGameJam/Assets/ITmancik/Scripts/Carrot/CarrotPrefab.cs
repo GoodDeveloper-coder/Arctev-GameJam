@@ -28,7 +28,7 @@ public class CarrotPrefab : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            timeManager.score += CarrotAddScore;
+            timeManager.AddScore(CarrotAddScore);
             GlobalScript.carrotsScore++;
             Destroy(this.gameObject);
         }
