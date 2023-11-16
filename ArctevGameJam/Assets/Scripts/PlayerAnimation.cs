@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer targetSpriteRenderer;
     [SerializeField] private Sprite[] walkSprites;
     [SerializeField] private Sprite[] jumpSprites;
     [SerializeField] private Sprite fallSprite;
 
     [SerializeField] private float initialAnimationSpeed;
 
-    private SpriteRenderer sr;
-
     private float animationSpeedFactor;
     
     // Start is called before the first frame update
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
         animationSpeedFactor = 1;
     }
 
@@ -47,7 +45,7 @@ public class PlayerAnimation : MonoBehaviour
     public void SetFallSprite()
     {
         StopAllCoroutines();
-        sr.sprite = fallSprite;
+        targetSpriteRenderer.sprite = fallSprite;
     }
 
     private IEnumerator Walk()
@@ -55,7 +53,7 @@ public class PlayerAnimation : MonoBehaviour
         int sprite = 0;
         while (sprite < walkSprites.Length)
         {
-            sr.sprite = walkSprites[sprite];
+            targetSpriteRenderer.sprite = walkSprites[sprite];
             sprite = (sprite + 1) % walkSprites.Length;
             yield return new WaitForSeconds(1f / (initialAnimationSpeed * animationSpeedFactor));
         }
@@ -66,7 +64,7 @@ public class PlayerAnimation : MonoBehaviour
         int sprite = 0;
         while (sprite < jumpSprites.Length)
         {
-            sr.sprite = jumpSprites[sprite];
+            targetSpriteRenderer.sprite = jumpSprites[sprite];
             sprite++;
             yield return new WaitForSeconds(1f / (initialAnimationSpeed * animationSpeedFactor));
         }
