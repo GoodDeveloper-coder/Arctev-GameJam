@@ -54,6 +54,22 @@ public class RoomGenerator : MonoBehaviour
         speed = s;
     }
 
+    public void HideAll()
+    {
+        if (previousRoom != null)
+        {
+            previousRoom.transform.Find("Yin").gameObject.SetActive(false);
+            previousRoom.transform.Find("Yang").gameObject.SetActive(false);
+        }
+        if (currentRoom != null)
+        {
+            currentRoom.transform.Find("Yin").gameObject.SetActive(false);
+            currentRoom.transform.Find("Yang").gameObject.SetActive(false);
+        }
+        nextRoom.transform.Find("Yin").gameObject.SetActive(false);
+        nextRoom.transform.Find("Yang").gameObject.SetActive(false);
+    }
+
     public void SetYin(bool yin)
     {
         if (previousRoom != null)
@@ -61,8 +77,6 @@ public class RoomGenerator : MonoBehaviour
             previousRoom.transform.Find("Yin").gameObject.SetActive(yin);
             previousRoom.transform.Find("Yang").gameObject.SetActive(!yin);
         }
-        //currentRoom.transform.Find("Yin").gameObject.SetActive(yin);
-        //currentRoom.transform.Find("Yang").gameObject.SetActive(!yin);
         if (currentRoom != null)
         {
             currentRoom.transform.Find("Yin").gameObject.SetActive(yin);

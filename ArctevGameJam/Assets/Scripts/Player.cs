@@ -73,6 +73,7 @@ public class Player : MonoBehaviour
             {
                 Camera.main.projectionMatrix *= Matrix4x4.Scale(new Vector3(1, -1, 1));
                 horizonFlipped = !horizonFlipped;
+                generator.HideAll();
                 playerYin.SetActive(!horizonFlipped);
                 playerYang.SetActive(horizonFlipped);
                 backgroundYin.SetActive(horizonFlipped);

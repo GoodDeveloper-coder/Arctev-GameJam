@@ -9880,7 +9880,7 @@ MonoBehaviour:
   - {fileID: -1397102102, guid: 693a873d7a92cc049b059d598d8168ba, type: 3}
   - {fileID: 1661396419, guid: 693a873d7a92cc049b059d598d8168ba, type: 3}
   fallSprite: {fileID: -1658514704, guid: 693a873d7a92cc049b059d598d8168ba, type: 3}
-  initialAnimationSpeed: 5
+  initialAnimationSpeed: 7.5
 --- !u!1 &214290305
 GameObject:
   m_ObjectHideFlags: 0
@@ -42139,7 +42139,7 @@ MonoBehaviour:
   - {fileID: 451199830, guid: b5a7c86422ef8bf4eaddee1483c279cf, type: 3}
   - {fileID: 766428990, guid: b5a7c86422ef8bf4eaddee1483c279cf, type: 3}
   fallSprite: {fileID: 404828145, guid: b5a7c86422ef8bf4eaddee1483c279cf, type: 3}
-  initialAnimationSpeed: 5
+  initialAnimationSpeed: 7.5
 --- !u!1 &1635222490
 GameObject:
   m_ObjectHideFlags: 0
