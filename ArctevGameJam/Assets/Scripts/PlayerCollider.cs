@@ -20,16 +20,21 @@ public class PlayerCollider : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        player.CollisionEnter(other);
+        player.CollisionEnter(gameObject, other.gameObject);
     }
 
     void OnCollisionExit2D(Collision2D other)
     {
-        player.CollisionExit(other);
+        player.CollisionExit(gameObject, other.gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        player.TriggerEnter(other);
+        player.CollisionEnter(gameObject, other.gameObject);
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        player.CollisionExit(gameObject, other.gameObject);
     }
 }

@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private GameObject playerYin;
     [SerializeField] private GameObject playerYang;
+    [SerializeField] private GameObject colliderYin;
+    [SerializeField] private GameObject colliderYang;
     [SerializeField] private GameObject backgroundYin;
     [SerializeField] private GameObject backgroundYang;
     [SerializeField] private GameObject textYin;
@@ -70,7 +72,7 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
-                //Camera.main.projectionMatrix *= Matrix4x4.Scale(new Vector3(1, -1, 1));
+                Camera.main.projectionMatrix *= Matrix4x4.Scale(new Vector3(1, -1, 1));
                 horizonFlipped = !horizonFlipped;
                 playerYin.SetActive(!horizonFlipped);
                 playerYang.SetActive(horizonFlipped);
@@ -114,27 +116,29 @@ public class Player : MonoBehaviour
         animatorYang.SetAnimationSpeedFactor(factor);
     }
 
-    public void CollisionEnter(Collision2D other)
+    public void CollisionEnter(GameObject collider, GameObject other)
     {
-        if (other.gameObject.tag == "Hazard") SetGameOver();
-        else if (!onGround && other.gameObject.tag == "Platform")
+        if (collider == (horizonFlipped ? playerYang : playerYin))
         {
-            onGround = true;
-            falling = false;
-            (horizonFlipped ? animatorYang : animatorYin).PlayWalkAnimation();
+            if (other.gameObject.tag == "Hazard") SetGameOver();
+            else if (!onGround && other.gameObject.tag == "Platform")
+            {
+                onGround = true;
+                falling = false;
+                (horizonFlipped ? animatorYang : animatorYin).PlayWalkAnimation();
+            }
+        }
+        else if (collider == (horizonFlipped ? colliderYang : colliderYin))
+        {
+            if (other.gameObject.tag == "Platform" || other.gameObject.tag == "Hazard") SetGameOver();
         }
     }
 
-    public void CollisionExit(Collision2D other)
+    public void CollisionExit(GameObject collider, GameObject other)
     {
-        if (onGround && other.gameObject.tag == "Platform") onGround = false;
+        if (GetComponent<Collider>() == (horizonFlipped ? playerYang : playerYin) && onGround && other.gameObject.tag == "Platform") onGround = false;
     }
-
-    public void TriggerEnter(Collider2D other)
-    {
-        if (other.gameObject.tag == "Platform" || other.gameObject.tag == "Hazard") SetGameOver();
-    }
-
+    
     public bool GetGameOver()
     {
         return gameOver;

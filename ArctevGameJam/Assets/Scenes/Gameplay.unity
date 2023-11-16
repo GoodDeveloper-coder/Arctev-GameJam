@@ -10513,7 +10513,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1397102102, guid: 693a873d7a92cc049b059d598d8168ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -15919,7 +15919,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 451199830, guid: b5a7c86422ef8bf4eaddee1483c279cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -36438,6 +36438,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerYin: {fileID: 622140082}
   playerYang: {fileID: 389905157}
+  colliderYin: {fileID: 1359062690}
+  colliderYang: {fileID: 1298017416}
   backgroundYin: {fileID: 2138660481}
   backgroundYang: {fileID: 1556933565}
   textYin: {fileID: 1635222490}
@@ -42751,7 +42753,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
