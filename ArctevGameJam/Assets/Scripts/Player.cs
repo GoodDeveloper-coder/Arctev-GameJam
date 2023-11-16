@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioSource musicGameOver;
 
     [SerializeField] private float cameraOffsetX;
-    public float jumpForce;
+    [SerializeField] private float jumpForce;
     [SerializeField] private float jumpMultiplier;
     [SerializeField] private float fallMultiplier;
 
