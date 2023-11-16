@@ -16,7 +16,7 @@ public class TimeManager : MonoBehaviour
     private PlayerAnimation animator;
 
     private float currentSpeed;
-    private float score;
+    public float score;
     private bool stop;
 
     // Start is called before the first frame update
