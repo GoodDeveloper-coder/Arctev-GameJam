@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
                 if (horizonFlipped) rbYang.MovePosition(rbYin.position - Vector2.up * 0.9f);
                 else rbYin.MovePosition(rbYang.position + Vector2.up * 0.9f);
                 generator.SetYin(!horizonFlipped);
-                (horizonFlipped ? animatorYang : animatorYin).PlayWalkAnimation();
+                //(horizonFlipped ? animatorYang : animatorYin).PlayWalkAnimation();
                 musicYang.volume = horizonFlipped ? 0 : 1;
                 musicYin.volume = horizonFlipped ? 1 : 0;
             }
@@ -120,23 +120,24 @@ public class Player : MonoBehaviour
     {
         if (collider == (horizonFlipped ? playerYang : playerYin))
         {
-            if (other.gameObject.tag == "Hazard") SetGameOver();
-            else if (!onGround && other.gameObject.tag == "Platform")
+            if (other.tag == "Hazard") SetGameOver();
+            else if (!onGround && other.tag == "Platform")
             {
                 onGround = true;
                 falling = false;
-                (horizonFlipped ? animatorYang : animatorYin).PlayWalkAnimation();
+                animatorYin.PlayWalkAnimation();
+                animatorYang.PlayWalkAnimation();
             }
         }
         else if (collider == (horizonFlipped ? colliderYang : colliderYin))
         {
-            if (other.gameObject.tag == "Platform" || other.gameObject.tag == "Hazard") SetGameOver();
+            if (other.tag == "Platform" || other.tag == "Hazard") SetGameOver();
         }
     }
 
     public void CollisionExit(GameObject collider, GameObject other)
     {
-        if (GetComponent<Collider>() == (horizonFlipped ? playerYang : playerYin) && onGround && other.gameObject.tag == "Platform") onGround = false;
+        if (collider == (horizonFlipped ? playerYang : playerYin) && onGround && other.tag == "Platform") onGround = false;
     }
     
     public bool GetGameOver()
