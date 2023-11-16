@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    [SerializeField] private SpriteMask maskYin;
-    [SerializeField] private SpriteMask maskYang;
-
     [SerializeField] private Sprite[] walkSprites;
     [SerializeField] private Sprite[] jumpSprites;
     [SerializeField] private Sprite fallSprite;
 
     [SerializeField] private float initialAnimationSpeed;
+
+    private SpriteRenderer sr;
 
     private float animationSpeedFactor;
     
@@ -20,6 +19,7 @@ public class PlayerAnimation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
         animationSpeedFactor = 1;
     }
 
@@ -34,25 +34,22 @@ public class PlayerAnimation : MonoBehaviour
         animationSpeedFactor = f;
     }
 
-    public void PlayWalkAnimation(bool y)
+    public void PlayWalkAnimation()
     {
-        yin = y;
         StopAllCoroutines();
         StartCoroutine(Walk());
     }
 
-    public void PlayJumpAnimation(bool y)
+    public void PlayJumpAnimation()
     {
-        yin = y;
         StopAllCoroutines();
         StartCoroutine(Jump());
     }
 
-    public void SetFallSprite(bool y)
+    public void SetFallSprite()
     {
-        yin = y;
         StopAllCoroutines();
-        (yin ? maskYin : maskYang).sprite = fallSprite;
+        sr.sprite = fallSprite;
     }
 
     private IEnumerator Walk()
@@ -60,7 +57,7 @@ public class PlayerAnimation : MonoBehaviour
         int sprite = 0;
         while (sprite < walkSprites.Length)
         {
-            (yin ? maskYin : maskYang).sprite = walkSprites[sprite];
+            sr.sprite = walkSprites[sprite];
             sprite = (sprite + 1) % walkSprites.Length;
             yield return new WaitForSeconds(1f / (initialAnimationSpeed * animationSpeedFactor));
         }
@@ -71,7 +68,7 @@ public class PlayerAnimation : MonoBehaviour
         int sprite = 0;
         while (sprite < jumpSprites.Length)
         {
-            (yin ? maskYin : maskYang).sprite = jumpSprites[sprite];
+            sr.sprite = jumpSprites[sprite];
             sprite++;
             yield return new WaitForSeconds(1f / (initialAnimationSpeed * animationSpeedFactor));
         }

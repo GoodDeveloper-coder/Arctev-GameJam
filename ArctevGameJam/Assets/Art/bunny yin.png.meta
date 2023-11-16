@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,490 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bunny yin_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 416.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f99cbdc65c78bc4439f7ddaba8db8b54
+      internalID: 2122866275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_1
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 416.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83a625e6a10ee994a89d2c7418d6aceb
+      internalID: 237713553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_2
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 416.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d0823c4ebb638742bcdfa86cad0c35f
+      internalID: 2062994054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_3
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 416.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eedf1df4b77fb440bb4a6ba75b767ae
+      internalID: 461615259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 333.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c683f95d6e5ded419e6f9352677bbb3
+      internalID: 144636609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_5
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 333.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a86d58af545d4b429a5b2758addff6d
+      internalID: 1433464715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_6
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 333.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db5b77e5e53a8e24492f546ca4088edb
+      internalID: 1138894473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_7
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 333.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4defd4f8cc63fa4da2c1658cc91c98e
+      internalID: -2016943950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 250.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3a8d089144337e49bee7f19d9cd226d
+      internalID: 1021200654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_9
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 250.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceb7b3042ff020249a1501982cd8e805
+      internalID: 1919538385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_10
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 250.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e504478e043c644bb88f5c8018f8ba4
+      internalID: -530150077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_11
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 250.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d921e268f54711741b345bde682b313c
+      internalID: 687381973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 167.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c71c17f4ca99b14596aa9612791427c
+      internalID: 1687392991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_13
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 167.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ba877f3f594234cbf7514313659adf
+      internalID: -1966175289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_14
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 167.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3d143c8effa024e837a30af084ba0e
+      internalID: 205453921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_15
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 167.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cfbe389ffc7f1e49ae7c1fb7ddc4c15
+      internalID: -757980912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 84.666664
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294d61144f9c00346b14aed28c228f35
+      internalID: 1339897656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_17
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 84.666664
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b91511925136c749a4cb1f8611ccca1
+      internalID: 1050805501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_18
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 84.666664
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7e0081ec7af59546bbe649516814bd0
+      internalID: 1553394448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_19
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 84.666664
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 416e1cd3f2dbaf947ae730b1a3412a7a
+      internalID: -1125237678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.6666641
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cd82857e9464ff4eb1a1a1526343fa8
+      internalID: -1720957377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_21
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 1.6666641
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e48f3032607dcd4a963e8fa9e579086
+      internalID: -1957934873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yin_22
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1.6666641
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79d931bd6e2877b42b3664052a4dfe53
+      internalID: -1100867907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +597,30 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bunny yin_0: 2122866275
+      bunny yin_1: 237713553
+      bunny yin_10: -530150077
+      bunny yin_11: 687381973
+      bunny yin_12: 1687392991
+      bunny yin_13: -1966175289
+      bunny yin_14: 205453921
+      bunny yin_15: -757980912
+      bunny yin_16: 1339897656
+      bunny yin_17: 1050805501
+      bunny yin_18: 1553394448
+      bunny yin_19: -1125237678
+      bunny yin_2: 2062994054
+      bunny yin_20: -1720957377
+      bunny yin_21: -1957934873
+      bunny yin_22: -1100867907
+      bunny yin_3: 461615259
+      bunny yin_4: 144636609
+      bunny yin_5: 1433464715
+      bunny yin_6: 1138894473
+      bunny yin_7: -2016943950
+      bunny yin_8: 1021200654
+      bunny yin_9: 1919538385
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

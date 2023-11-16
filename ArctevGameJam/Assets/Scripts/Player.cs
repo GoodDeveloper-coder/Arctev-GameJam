@@ -27,7 +27,8 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rbYin;
     private Rigidbody2D rbYang;
-    private PlayerAnimation animator;
+    private PlayerAnimation animatorYin;
+    private PlayerAnimation animatorYang;
     private bool onGround;
     private bool falling;
     private bool horizonFlipped;
@@ -45,7 +46,8 @@ public class Player : MonoBehaviour
         rbYin = playerYin.GetComponent<Rigidbody2D>();
         rbYang = playerYang.GetComponent<Rigidbody2D>();
         generator.SetYin(true);
-        animator = GetComponent<PlayerAnimation>();
+        animatorYin = playerYin.GetComponent<PlayerAnimation>();
+        animatorYang = playerYang.GetComponent<PlayerAnimation>();
         //onGround = true;
     }
 
@@ -80,7 +82,7 @@ public class Player : MonoBehaviour
                 if (horizonFlipped) rbYang.MovePosition(rbYin.position - Vector2.up * 0.9f);
                 else rbYin.MovePosition(rbYang.position + Vector2.up * 0.9f);
                 generator.SetYin(!horizonFlipped);
-                animator.PlayWalkAnimation(!horizonFlipped);
+                (horizonFlipped ? animatorYang : animatorYin).PlayWalkAnimation();
                 musicYang.volume = horizonFlipped ? 0 : 1;
                 musicYin.volume = horizonFlipped ? 1 : 0;
             }
@@ -88,7 +90,7 @@ public class Player : MonoBehaviour
             {
                 rb.velocity = new Vector2();
                 rb.AddForce(Vector2.up * jumpForce * (horizonFlipped ? -1 : 1), ForceMode2D.Impulse);
-                animator.PlayJumpAnimation(!horizonFlipped);
+                (horizonFlipped ? animatorYang : animatorYin).PlayJumpAnimation();
             }
             //else rb.MovePosition(rb.position + Vector2.right * walkSpeed * Time.deltaTime);
         }
@@ -97,7 +99,7 @@ public class Player : MonoBehaviour
         if (!falling && (horizonFlipped ? rb.velocity.y > 0 : rb.velocity.y < 0))
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * (horizonFlipped ? -1 : 1) * Time.deltaTime;
-            animator.SetFallSprite(!horizonFlipped);
+            (horizonFlipped ? animatorYang : animatorYin).SetFallSprite();
             falling = true;
         }
         else if (horizonFlipped ? rb.velocity.y < 0 : rb.velocity.y > 0) rb.velocity += Vector2.up * Physics2D.gravity.y * (jumpMultiplier - 1) * (horizonFlipped ? -1 : 1) * Time.deltaTime;
@@ -119,7 +121,7 @@ public class Player : MonoBehaviour
         {
             onGround = true;
             falling = false;
-            animator.PlayWalkAnimation(!horizonFlipped);
+            (horizonFlipped ? animatorYang : animatorYin).PlayWalkAnimation();
         }
     }
 
