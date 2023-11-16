@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,490 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bunny yang_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 416.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69741cb940756e46aa73fa172cca357
+      internalID: -1060673777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_1
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 416.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2110f7fc633161543aa51879dca9a54b
+      internalID: 1977092366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_2
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 416.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa0aa8ab27f6902439eb0c1611a765e9
+      internalID: -337497418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_3
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 416.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec237314022bcc6488871ccdee85429d
+      internalID: 685707056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 333.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 999570c4a9102d64a8f7af9252098ff4
+      internalID: 1616289056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_5
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 333.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f93c317fc2966ed49a06ea45f0313ad3
+      internalID: -1809991203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_6
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 333.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c29682eb5755af4c9bbeb5dc6f22fd1
+      internalID: 929124668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_7
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 333.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b13bcf11946c21549938a5b76d30b52c
+      internalID: 726448141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 250.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dcbfff7fee879440ab057b1cc864b0f
+      internalID: 1661396419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_9
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 250.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db23199be4d9d294aa16e898d33bcb08
+      internalID: -1658514704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_10
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 250.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9fe6cb44f832ff428fb3e8052c93c34
+      internalID: -1287605440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_11
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 250.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5e5ba9e6180cd248aebd0f8d9f75974
+      internalID: -1116261903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 167.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87b72ee8ed7d87e4a86fa503377f0bb2
+      internalID: 1592445127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_13
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 167.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05515da07fc48674e9c813b3b0bd72d5
+      internalID: -1397102102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_14
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 167.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb92618ec8e87624e8e8484a94b71d09
+      internalID: 1414508021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_15
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 167.66666
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b82402e8faa18e4585d9fd19251b075
+      internalID: 1768970406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 84.666664
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 134218ebe45e85d45af40a5ea7a3c622
+      internalID: -2048913424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_17
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 84.666664
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32d7a42fd10548f41b35e784d68b77e3
+      internalID: -1273731286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_18
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 84.666664
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc966754905c7040a6393ab2b734ddd
+      internalID: 1088691921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_19
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 84.666664
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cc06b33f35c5074187a75c41b4a2542
+      internalID: 1424148295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.6666641
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c79f0fe6e8b01014399a1f36bb3eba48
+      internalID: 1890517902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_21
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 1.6666641
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 801c3a5603a020c40ace684236694740
+      internalID: 1290212251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bunny yang_22
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1.6666641
+        width: 61.75
+        height: 83.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644fc7fb7d56e7840a06f8839e332277
+      internalID: -2091504376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +597,30 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bunny yang_0: -1060673777
+      bunny yang_1: 1977092366
+      bunny yang_10: -1287605440
+      bunny yang_11: -1116261903
+      bunny yang_12: 1592445127
+      bunny yang_13: -1397102102
+      bunny yang_14: 1414508021
+      bunny yang_15: 1768970406
+      bunny yang_16: -2048913424
+      bunny yang_17: -1273731286
+      bunny yang_18: 1088691921
+      bunny yang_19: 1424148295
+      bunny yang_2: -337497418
+      bunny yang_20: 1890517902
+      bunny yang_21: 1290212251
+      bunny yang_22: -2091504376
+      bunny yang_3: 685707056
+      bunny yang_4: 1616289056
+      bunny yang_5: -1809991203
+      bunny yang_6: 929124668
+      bunny yang_7: 726448141
+      bunny yang_8: 1661396419
+      bunny yang_9: -1658514704
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
