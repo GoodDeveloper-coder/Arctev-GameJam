@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6063637818496843113}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6063637819065158894}
@@ -73,10 +73,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 06ac0eeadb9a5494ca4d59ba07ff7fa8, type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: b6632f1d51649484eb91239b9c36e180, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.75, y: 1.875}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 6063637819065158894}
   - component: {fileID: 4599925581983440370}
   - component: {fileID: 5056388226038516508}
-  - component: {fileID: 6241786376817642931}
+  - component: {fileID: 4013407794055494825}
   m_Layer: 0
   m_Name: CarrotYang
   m_TagString: Untagged
@@ -176,8 +176,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carrotSpeed: 0
   CarrotAddScore: 20
---- !u!60 &6241786376817642931
-PolygonCollider2D:
+--- !u!58 &4013407794055494825
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -190,23 +190,5 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.2559244, y: 0.061053514}
-      - {x: 0.1938951, y: 0.32143348}
-      - {x: 0.09097776, y: 0.3100133}
-      - {x: 0.03064277, y: 0.2249276}
-      - {x: -0.088311106, y: 0.19119713}
-      - {x: -0.2894998, y: -0.21364534}
-      - {x: -0.2895619, y: -0.31197822}
-      - {x: 0.07667625, y: 0.036636233}
-      - {x: 0.18284398, y: -0.13394406}
+  serializedVersion: 2
+  m_Radius: 0.25

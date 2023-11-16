@@ -24,6 +24,7 @@ public class RoomGenerator : MonoBehaviour
         //currentRoom = startRoom;
         //nextRoom = Instantiate(roomPrefabs[currentRoomIndex], transform.position + Vector3.right * roomLength, transform.rotation);
         nextRoom = startRoom;
+        nextRoom.transform.Find("Yang").gameObject.SetActive(false);
     }
 
     // Update is called once per frame
