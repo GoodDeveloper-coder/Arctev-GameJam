@@ -21,9 +21,7 @@ public class RoomGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //currentRoomIndex = Random.Range(0, roomPrefabs.Length);
-        //currentRoom = startRoom;
-        //nextRoom = Instantiate(roomPrefabs[currentRoomIndex], transform.position + Vector3.right * roomLength, transform.rotation);
+        currentRoomIndex = -1;
         nextRoom = startRoom;
         SetYin(true);
     }

@@ -36373,7 +36373,7 @@ MonoBehaviour:
   musicYang: {fileID: 310911654}
   musicYin: {fileID: 1132176872}
   cameraOffsetX: 5
-  jumpForce: 5
+  jumpForce: 6.25
   jumpMultiplier: 1.5
   fallMultiplier: 1.5
 --- !u!1 &1446729774

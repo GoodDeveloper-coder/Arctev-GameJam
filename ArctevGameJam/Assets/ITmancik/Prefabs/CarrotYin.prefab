@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 4599925581983440370}
   - component: {fileID: 5056388226038516508}
   - component: {fileID: 2927779351147247316}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CarrotYin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,4 +191,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.5
