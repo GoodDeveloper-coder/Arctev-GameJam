@@ -16,6 +16,7 @@ public class RoomGenerator : MonoBehaviour
 
     private int currentRoomIndex;
     private float speed;
+    private bool yin;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class RoomGenerator : MonoBehaviour
         //currentRoom = startRoom;
         //nextRoom = Instantiate(roomPrefabs[currentRoomIndex], transform.position + Vector3.right * roomLength, transform.rotation);
         nextRoom = startRoom;
-        nextRoom.transform.Find("Yang").gameObject.SetActive(false);
+        SetYin(true);
     }
 
     // Update is called once per frame
@@ -48,6 +49,7 @@ public class RoomGenerator : MonoBehaviour
         while (currentRoomIndex == r);
         currentRoomIndex = r;
         nextRoom = Instantiate(roomPrefabs[currentRoomIndex], transform.position, transform.rotation);
+        SetYin(yin);
     }
 
     public void SetSpeed(float s)
@@ -71,8 +73,9 @@ public class RoomGenerator : MonoBehaviour
         nextRoom.transform.Find("Yang").gameObject.SetActive(false);
     }
 
-    public void SetYin(bool yin)
+    public void SetYin(bool y)
     {
+        yin = y;
         if (previousRoom != null)
         {
             previousRoom.transform.Find("Yin").gameObject.SetActive(yin);
