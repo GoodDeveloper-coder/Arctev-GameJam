@@ -29,6 +29,11 @@ public class RoomGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    void FixedUpdate()
+    {
         transform.position -= Vector3.right * speed * Time.deltaTime;
         if (previousRoom != null) previousRoom.transform.position -= Vector3.right * speed * Time.deltaTime;
         if (currentRoom != null) currentRoom.transform.position -= Vector3.right * speed * Time.deltaTime;

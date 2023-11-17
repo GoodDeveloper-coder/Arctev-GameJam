@@ -29,11 +29,14 @@ public class Player : MonoBehaviour
     [SerializeField] private float jumpMultiplier;
     [SerializeField] private float fallMultiplier;
 
+    [SerializeField] private float triggerDuration;
+
     private Rigidbody2D rbYin;
     private Rigidbody2D rbYang;
     private bool onGround;
     private bool falling;
     private bool horizonFlipped;
+    private float triggerTime;
     private bool gameOver;
 
     // Start is called before the first frame update
@@ -44,6 +47,8 @@ public class Player : MonoBehaviour
         textYin.SetActive(false);
         iconYin.SetActive(false);
         gameOverScreen.SetActive(false);
+        animatorYin.PlayWalkAnimation();
+        animatorYang.PlayWalkAnimation();
         musicYin.volume = 0;
         musicYin.Play();
         musicYang.Play();
@@ -66,6 +71,11 @@ public class Player : MonoBehaviour
         cameraPosition.x = rb.position.x + cameraOffsetX;
         cameraPosition.y = rb.position.y;
         Camera.main.transform.position = cameraPosition;
+        if (triggerTime > 0)
+        {
+            triggerTime -= Time.deltaTime;
+            if (triggerTime <= 0) SetGameOver();
+        }
     }
 
     void FixedUpdate()
@@ -94,8 +104,6 @@ public class Player : MonoBehaviour
                 else rbYin.MovePosition(rbYang.position + Vector2.up * 1.22f);
                 (horizonFlipped ? playerYin : playerYang).SetActive(false);
                 generator.SetYin(!horizonFlipped);
-                animatorYin.PlayWalkAnimation();
-                animatorYang.PlayWalkAnimation();
                 musicYang.volume = horizonFlipped ? 0 : 1;
                 musicYin.volume = horizonFlipped ? 1 : 0;
             }
@@ -103,21 +111,17 @@ public class Player : MonoBehaviour
             {
                 rb.velocity = new Vector2();
                 rb.AddForce(Vector2.up * jumpForce * (horizonFlipped ? -1 : 1), ForceMode2D.Impulse);
-                (horizonFlipped ? animatorYang : animatorYin).PlayJumpAnimation();
                 animatorYin.PlayJumpAnimation();
                 animatorYang.PlayJumpAnimation();
             }
-            //else rb.MovePosition(rb.position + Vector2.right * walkSpeed * Time.deltaTime);
         }
-        //else rb.MovePosition(rb.position + Vector2.right * walkSpeed * Time.deltaTime);
-        //if (Mathf.Abs(walkInput) > 0.1f) rigidBody.AddForce(Vector2.right * walkInput * walkSpeed, ForceMode2D.Impulse);
         if (!falling && (horizonFlipped ? rb.velocity.y > 0 : rb.velocity.y < 0))
         {
+            onGround = false;
+            falling = true;
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * (horizonFlipped ? -1 : 1) * Time.deltaTime;
-            (horizonFlipped ? animatorYang : animatorYin).SetFallSprite();
             animatorYin.SetFallSprite();
             animatorYang.SetFallSprite();
-            falling = true;
         }
         else if (horizonFlipped ? rb.velocity.y < 0 : rb.velocity.y > 0) rb.velocity += Vector2.up * Physics2D.gravity.y * (jumpMultiplier - 1) * (horizonFlipped ? -1 : 1) * Time.deltaTime;
     }
@@ -143,13 +147,14 @@ public class Player : MonoBehaviour
         }
         else if (collider == (horizonFlipped ? colliderYang : colliderYin))
         {
-            if (other.tag == "Platform" || other.tag == "Hazard") SetGameOver();
+            if (other.tag == "Platform" || other.tag == "Hazard") triggerTime = triggerDuration;
         }
     }
 
     public void CollisionExit(GameObject collider, GameObject other)
     {
         if (collider == (horizonFlipped ? playerYang : playerYin) && onGround && other.tag == "Platform") onGround = false;
+        else if (collider == (horizonFlipped ? colliderYang : colliderYin) && triggerTime > 0) triggerTime = 0;
     }
     
     public bool GetGameOver()
