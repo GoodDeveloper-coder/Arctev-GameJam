@@ -8,6 +8,8 @@ TagManager:
   - ParralaxSpawnPos
   - FakeCam
   - Platform
+  - WhiteParticle
+  - DarkParticle
   layers:
   - Default
   - TransparentFX

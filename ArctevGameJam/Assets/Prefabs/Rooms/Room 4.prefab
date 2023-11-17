@@ -93,8 +93,8 @@ MonoBehaviour:
   - {fileID: 9119561473125112988}
   - {fileID: 8356505372137580163}
   - {fileID: 617307833922532059}
-  DarkPowerUpPrefab: {fileID: 6532767889133009493, guid: 149e7a437321ade4d9705b2b689889c2, type: 3}
-  WhitePowerUpPrefab: {fileID: 6431095896014517294, guid: d5d177ee89985e34dbc5a7c848d0760c, type: 3}
+  DarkPowerUpPrefab: {fileID: 6014237052235112558, guid: 149e7a437321ade4d9705b2b689889c2, type: 3}
+  WhitePowerUpPrefab: {fileID: 8169318407902099832, guid: d5d177ee89985e34dbc5a7c848d0760c, type: 3}
 --- !u!1 &1858989167252345050
 GameObject:
   m_ObjectHideFlags: 0
