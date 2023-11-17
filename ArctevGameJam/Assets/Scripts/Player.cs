@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] private AudioSource musicYang;
     [SerializeField] private AudioSource musicYin;
+    [SerializeField] private AudioSource GameOverSound;
+    [SerializeField] private AudioSource JumpSound;
 
     [SerializeField] private float cameraOffsetX;
     public float jumpForce;
@@ -111,6 +113,7 @@ public class Player : MonoBehaviour
             {
                 rb.velocity = new Vector2();
                 rb.AddForce(Vector2.up * jumpForce * (horizonFlipped ? -1 : 1), ForceMode2D.Impulse);
+                JumpSound.Play();   
                 animatorYin.PlayJumpAnimation();
                 animatorYang.PlayJumpAnimation();
             }
@@ -169,6 +172,7 @@ public class Player : MonoBehaviour
         iconYang.SetActive(false);
         iconYin.SetActive(false);
         gameOverScreen.SetActive(true);
+        GameOverSound.Play();
         gameOver = true;
     }
 }
