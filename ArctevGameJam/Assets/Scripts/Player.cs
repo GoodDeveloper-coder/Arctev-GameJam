@@ -23,7 +23,6 @@ public class Player : MonoBehaviour
 
     [SerializeField] private AudioSource musicYang;
     [SerializeField] private AudioSource musicYin;
-    [SerializeField] private AudioSource musicGameOver;
 
     [SerializeField] private float cameraOffsetX;
     [SerializeField] private float jumpForce;
@@ -46,7 +45,8 @@ public class Player : MonoBehaviour
         iconYin.SetActive(false);
         gameOverScreen.SetActive(false);
         musicYin.volume = 0;
-        musicGameOver.volume = 0;
+        musicYin.Play();
+        musicYang.Play();
         rbYin = playerYin.GetComponent<Rigidbody2D>();
         rbYang = playerYang.GetComponent<Rigidbody2D>();
         generator.SetYin(true);
@@ -56,6 +56,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!((horizonFlipped ? musicYin : musicYang).isPlaying))
+        {
+            musicYin.Play();
+            musicYang.Play();
+        }
         Vector3 cameraPosition = Camera.main.transform.position;
         Rigidbody2D rb = horizonFlipped ? rbYang : rbYin;
         cameraPosition.x = rb.position.x + cameraOffsetX;
@@ -155,9 +160,6 @@ public class Player : MonoBehaviour
         iconYang.SetActive(false);
         iconYin.SetActive(false);
         gameOverScreen.SetActive(true);
-        musicYang.volume = 0;
-        musicYin.volume = 0;
-        musicGameOver.volume = 1;
         gameOver = true;
     }
 }
