@@ -80,8 +80,8 @@ public class Player : MonoBehaviour
                 horizonFlipped = !horizonFlipped;
                 generator.HideAll();
                 (horizonFlipped ? playerYang : playerYin).SetActive(true);
-                playerYin.SetActive(!horizonFlipped);
-                playerYang.SetActive(horizonFlipped);
+                //playerYin.SetActive(!horizonFlipped);
+                //playerYang.SetActive(horizonFlipped);
                 backgroundYin.SetActive(horizonFlipped);
                 backgroundYang.SetActive(!horizonFlipped);
                 textYin.SetActive(horizonFlipped);
@@ -159,6 +159,8 @@ public class Player : MonoBehaviour
 
     private void SetGameOver()
     {
+        playerYin.SetActive(false);
+        playerYin.SetActive(false);
         iconYang.SetActive(false);
         iconYin.SetActive(false);
         gameOverScreen.SetActive(true);
