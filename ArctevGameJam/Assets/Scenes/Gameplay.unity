@@ -26179,7 +26179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomPrefabs:
-  - {fileID: 4704579455938951419, guid: 54480ed46b833784482c85ac23191f4f, type: 3}
+  - {fileID: 2926984781004748046, guid: 17c9e822a0f24b14db8ee6bf3558a158, type: 3}
+  - {fileID: 5622527223279580382, guid: f0d12da33b57f5b489a240171ee64d6b, type: 3}
   - {fileID: 1378535888473612319, guid: a4f86fa3b4608424c8cbf76851b2e273, type: 3}
   - {fileID: 8282076383627007414, guid: 9ee66af09b02e4b47a68005e8442e79c, type: 3}
   startRoom: {fileID: 1542204839}
@@ -36221,7 +36222,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.45, y: 0.25}
+  m_Size: {x: 0.05, y: 0.05}
   m_EdgeRadius: 0
 --- !u!114 &1298017419
 MonoBehaviour:
@@ -36293,7 +36294,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.45, y: 0.25}
+  m_Size: {x: 0.05, y: 0.05}
   m_EdgeRadius: 0
 --- !u!114 &1359062693
 MonoBehaviour:

@@ -79,6 +79,7 @@ public class Player : MonoBehaviour
                 Camera.main.projectionMatrix *= Matrix4x4.Scale(new Vector3(1, -1, 1));
                 horizonFlipped = !horizonFlipped;
                 generator.HideAll();
+                (horizonFlipped ? playerYang : playerYin).SetActive(true);
                 playerYin.SetActive(!horizonFlipped);
                 playerYang.SetActive(horizonFlipped);
                 backgroundYin.SetActive(horizonFlipped);
@@ -91,6 +92,7 @@ public class Player : MonoBehaviour
                 rbYang.gravityScale *= -1;
                 if (horizonFlipped) rbYang.MovePosition(rbYin.position - Vector2.up * 1.22f);
                 else rbYin.MovePosition(rbYang.position + Vector2.up * 1.22f);
+                (horizonFlipped ? playerYin : playerYang).SetActive(false);
                 generator.SetYin(!horizonFlipped);
                 animatorYin.PlayWalkAnimation();
                 animatorYang.PlayWalkAnimation();
