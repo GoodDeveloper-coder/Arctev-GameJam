@@ -30,10 +30,10 @@ public class RoomGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.position -= Vector3.right * speed * Time.deltaTime;
-        //if (previousRoom != null) previousRoom.transform.position -= Vector3.right * speed * Time.deltaTime;
-        //if (currentRoom != null) currentRoom.transform.position -= Vector3.right * speed * Time.deltaTime;
-        //nextRoom.transform.position -= Vector3.right * speed * Time.deltaTime;
+        transform.position -= Vector3.right * speed * Time.deltaTime;
+        if (previousRoom != null) previousRoom.transform.position -= Vector3.right * speed * Time.deltaTime;
+        if (currentRoom != null) currentRoom.transform.position -= Vector3.right * speed * Time.deltaTime;
+        nextRoom.transform.position -= Vector3.right * speed * Time.deltaTime;
     }
 
     void OnTriggerEnter2D(Collider2D other)
