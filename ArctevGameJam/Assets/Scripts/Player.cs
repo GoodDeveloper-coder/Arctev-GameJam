@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rbYang;
     private PlayerAnimation animatorYin;
     private PlayerAnimation animatorYang;
-    public bool onGround;
+    private bool onGround;
     private bool falling;
     private bool horizonFlipped;
     private bool gameOver;
