@@ -15,7 +15,8 @@ public class PlayerCollider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        player.onGround = onGround;
+        CheckingGround();
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -36,5 +37,14 @@ public class PlayerCollider : MonoBehaviour
     void OnTriggerExit2D(Collider2D other)
     {
         player.CollisionExit(gameObject, other.gameObject);
+    }
+
+    public bool onGround;
+    public LayerMask Ground;
+    public Transform GroundCheck;
+    private float GroundCheckRadius;
+    void CheckingGround()
+    {
+        onGround = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, Ground);
     }
 }
