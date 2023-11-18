@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer targetSpriteRenderer;
+    [SerializeField] private SpriteMask targetSpriteMask;
+
     [SerializeField] private Sprite[] walkSprites;
     [SerializeField] private Sprite[] jumpSprites;
     [SerializeField] private Sprite fallSprite;
@@ -46,6 +48,7 @@ public class PlayerAnimation : MonoBehaviour
     {
         StopAllCoroutines();
         targetSpriteRenderer.sprite = fallSprite;
+        if (targetSpriteMask != null) targetSpriteMask.sprite = fallSprite;
     }
 
     private IEnumerator Walk()
@@ -54,6 +57,7 @@ public class PlayerAnimation : MonoBehaviour
         while (sprite < walkSprites.Length)
         {
             targetSpriteRenderer.sprite = walkSprites[sprite];
+            if (targetSpriteMask != null) targetSpriteMask.sprite = walkSprites[sprite];
             sprite = (sprite + 1) % walkSprites.Length;
             yield return new WaitForSeconds(1f / (initialAnimationSpeed * animationSpeedFactor));
         }
@@ -65,6 +69,7 @@ public class PlayerAnimation : MonoBehaviour
         while (sprite < jumpSprites.Length)
         {
             targetSpriteRenderer.sprite = jumpSprites[sprite];
+            if (targetSpriteMask != null) targetSpriteMask.sprite = jumpSprites[sprite];
             sprite++;
             yield return new WaitForSeconds(1f / (initialAnimationSpeed * animationSpeedFactor));
         }
