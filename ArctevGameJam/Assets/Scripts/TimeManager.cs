@@ -98,7 +98,7 @@ public class TimeManager : MonoBehaviour
         particleSpawning = true;
         yield return new WaitForSeconds(initialSpeed / (initialParticleFrequency * currentSpeed));
         particles.Add(Instantiate(particlePrefab, new Vector3(particleBoundaries.x, Random.Range(-particleBoundaries.y, particleBoundaries.y), 0), transform.rotation));
-        particleTargets.Add(origin + new Vector3(-particleBoundaries.x, Random.Range(-particleBoundaries.y, particleBoundaries.y), 0));
+        particleTargets.Add(new Vector3(-particleBoundaries.x, Random.Range(-particleBoundaries.y, particleBoundaries.y), 0));
         particleClockwise.Add(Random.Range(0, 2) == 0);
         particleSpawning = false;
     }
