@@ -84,10 +84,13 @@ public class Player : MonoBehaviour
             triggerTime -= Time.deltaTime;
             if (triggerTime <= 0) SetGameOver();
         }
+
+        CodeFromFixedUpdate();
     }
 
     void FixedUpdate()
     {
+        /*
         if (gameOver) return;
         Rigidbody2D rb = horizonFlipped ? rbYang : rbYin;
         if (onGround)
@@ -132,6 +135,7 @@ public class Player : MonoBehaviour
             animatorYang.SetFallSprite();
         }
         else if (horizonFlipped ? rb.velocity.y < 0 : rb.velocity.y > 0) rb.velocity += Vector2.up * Physics2D.gravity.y * (jumpMultiplier - 1) * (horizonFlipped ? -1 : 1) * Time.deltaTime;
+        */
     }
 
     public void SetAnimationSpeedFactor(float factor)
@@ -222,5 +226,53 @@ public class Player : MonoBehaviour
             else frame--;
         }
         while (frame < gameOverScreenFrames.Length);
+    }
+
+    void CodeFromFixedUpdate()
+    {
+        if (gameOver) return;
+        Rigidbody2D rb = horizonFlipped ? rbYang : rbYin;
+        if (onGround)
+        {
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+            {
+                Camera.main.projectionMatrix *= Matrix4x4.Scale(new Vector3(1, -1, 1));
+                horizonFlipped = !horizonFlipped;
+                generator.HideAll();
+                (horizonFlipped ? playerYang : playerYin).SetActive(true);
+                backgroundYin.SetActive(horizonFlipped);
+                backgroundYang.SetActive(!horizonFlipped);
+                textYin.SetActive(horizonFlipped);
+                textYang.SetActive(!horizonFlipped);
+                iconYin.SetActive(horizonFlipped);
+                iconYang.SetActive(!horizonFlipped);
+                rbYin.gravityScale *= -1;
+                rbYang.gravityScale *= -1;
+                if (horizonFlipped) rbYang.MovePosition(rbYin.position - Vector2.up * 1.22f);
+                else rbYin.MovePosition(rbYang.position + Vector2.up * 1.22f);
+                (horizonFlipped ? playerYin : playerYang).SetActive(false);
+                generator.SetYin(!horizonFlipped);
+                musicYang.volume = horizonFlipped ? 0 : 1;
+                musicYin.volume = horizonFlipped ? 1 : 0;
+                FlipHorizonSound.Play();
+            }
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            {
+                rb.velocity = new Vector2();
+                rb.AddForce(Vector2.up * (jumpPowerup ? powerupJumpForce : jumpForce) * (horizonFlipped ? -1 : 1), ForceMode2D.Impulse);
+                JumpSound.Play();
+                animatorYin.PlayJumpAnimation();
+                animatorYang.PlayJumpAnimation();
+            }
+        }
+        if (!falling && (horizonFlipped ? rb.velocity.y > 0 : rb.velocity.y < 0))
+        {
+            onGround = false;
+            falling = true;
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * (horizonFlipped ? -1 : 1) * Time.deltaTime;
+            animatorYin.SetFallSprite();
+            animatorYang.SetFallSprite();
+        }
+        else if (horizonFlipped ? rb.velocity.y < 0 : rb.velocity.y > 0) rb.velocity += Vector2.up * Physics2D.gravity.y * (jumpMultiplier - 1) * (horizonFlipped ? -1 : 1) * Time.deltaTime;
     }
 }
