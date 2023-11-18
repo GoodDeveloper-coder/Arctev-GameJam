@@ -105,7 +105,6 @@ public class RoomGenerator : MonoBehaviour
     {
         slowPowerup = true;
         yield return new WaitForSeconds(duration);
-        Camera.main.projectionMatrix *= Matrix4x4.Scale(new Vector3(-1, 1, 1));
         slowPowerup = false;
     }
 }
