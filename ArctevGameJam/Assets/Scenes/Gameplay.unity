@@ -10051,8 +10051,11 @@ MonoBehaviour:
   - {fileID: 1635222492}
   - {fileID: 695680873}
   - {fileID: 1495743811}
+  particlePrefab: {fileID: 2336217027740122739, guid: 99d01ae26f6c27b438aed74ce63cba49, type: 3}
+  particleBoundaries: {x: 14, y: 7}
   initialSpeed: 1
   speedIncrementPerSecond: 0.025
+  initialParticleFrequency: 2.5
 --- !u!4 &214290307
 Transform:
   m_ObjectHideFlags: 0
@@ -10060,13 +10063,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214290305}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &264943277
 GameObject:
@@ -26947,7 +26950,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &907650001
 MonoBehaviour:
@@ -31915,6 +31918,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e145138bdfe681469f5a4439f3be192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  codewords: []
+  sceneNames: []
 --- !u!1 &1030041901
 GameObject:
   m_ObjectHideFlags: 0
@@ -37402,7 +37407,7 @@ Transform:
   - {fileID: 1617800879}
   - {fileID: 161199405}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1394137391
 MonoBehaviour:
@@ -37432,7 +37437,6 @@ MonoBehaviour:
   generator: {fileID: 907650001}
   musicYang: {fileID: 310911654}
   musicYin: {fileID: 1132176872}
-  musicGameOver: {fileID: 0}
   GameOverSound: {fileID: 1328630028}
   JumpSound: {fileID: 1033208885}
   FlipHorizonSound: {fileID: 342525989}
@@ -37669,7 +37673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1496296651
 Transform:
   m_ObjectHideFlags: 0
@@ -42845,7 +42849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1582937166
 RectTransform:
   m_ObjectHideFlags: 0
@@ -43135,7 +43139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1783887905
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43318,7 +43322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1880684905
 BoxCollider2D:
   m_ObjectHideFlags: 0

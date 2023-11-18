@@ -16,7 +16,6 @@ public class SpawnPowerUp : MonoBehaviour
     void Start()
     {
         for (int i = 0; i < 8; i++) Destroy((Random.Range(0, 2) == 0 ? carrotYinInstances : carrotYangInstances)[i]);
-        GameObject powerup;
         int r = Random.Range(0, (powerupYinInstances.Length + powerupYangInstances.Length) * 2);
         for (int i = 0; i < powerupYinInstances.Length; i++)
         {
