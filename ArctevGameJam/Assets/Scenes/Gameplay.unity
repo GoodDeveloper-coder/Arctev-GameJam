@@ -506,7 +506,7 @@ MonoBehaviour:
   - {fileID: 1495743811}
   particlePrefab: {fileID: 2336217027740122739, guid: 99d01ae26f6c27b438aed74ce63cba49, type: 3}
   particleBoundaries: {x: 14, y: 7}
-  initialSpeed: 1
+  initialSpeed: 2
   speedIncrementPerSecond: 0.025
   initialParticleFrequency: 1
 --- !u!4 &214290307
@@ -4576,7 +4576,7 @@ MonoBehaviour:
   powerupJumpForce: 10
   jumpMultiplier: 2
   fallMultiplier: 2
-  triggerCountdown: 0.1
+  triggerCountdown: 0.2
   mirror: 0
 --- !u!1 &1420672600
 GameObject:

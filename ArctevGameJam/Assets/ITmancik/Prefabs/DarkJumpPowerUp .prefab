@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerupSprites:
   - {fileID: 21300000, guid: 55da4c1341606104d8018d52102855d7, type: 3}
-  - {fileID: 21300000, guid: 55da4c1341606104d8018d52102855d7, type: 3}
+  - {fileID: 21300000, guid: b75624947c219b4459da00e5d2d5ae41, type: 3}
   - {fileID: 21300000, guid: 892713bcaab908344ab0bd415fbf6355, type: 3}
   - {fileID: 21300000, guid: 91a04e8fc3cb03a408bba13417dd28c3, type: 3}
   spriteRenderer: {fileID: 3347827432621568623}
