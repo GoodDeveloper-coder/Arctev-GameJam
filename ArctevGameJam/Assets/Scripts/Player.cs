@@ -15,10 +15,12 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject iconYin;
     [SerializeField] private GameObject iconYang;
     [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private GameObject[] gameOverScreenFrames;
 
     [SerializeField] private PlayerAnimation animatorYin;
     [SerializeField] private PlayerAnimation animatorYang;
 
+    [SerializeField] private TimeManager timeManager;
     [SerializeField] private RoomGenerator generator;
 
     [SerializeField] private AudioSource musicYang;
@@ -201,7 +203,24 @@ public class Player : MonoBehaviour
         iconYang.SetActive(false);
         iconYin.SetActive(false);
         gameOverScreen.SetActive(true);
+        StartCoroutine(AnimateGameOverScreen());
         GameOverSound.Play();
         gameOver = true;
+    }
+
+    private IEnumerator AnimateGameOverScreen()
+    {
+        int frame = 1;
+        bool forward = true;
+        do
+        {
+            for (int i = 0; i < gameOverScreenFrames.Length; i++) gameOverScreenFrames[i].SetActive(i == frame);
+            yield return new WaitForSeconds(0.08112f);
+            if (frame == 1) forward = true;
+            else if (frame == gameOverScreenFrames.Length - 1) forward = false;
+            if (forward) frame++;
+            else frame--;
+        }
+        while (frame < gameOverScreenFrames.Length);
     }
 }

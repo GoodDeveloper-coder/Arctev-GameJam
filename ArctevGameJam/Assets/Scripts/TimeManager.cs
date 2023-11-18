@@ -9,7 +9,7 @@ public class TimeManager : MonoBehaviour
     
     [SerializeField] private RoomGenerator generator;
     [SerializeField] private TextMeshProUGUI[] scoreText;
-
+    
     [SerializeField] private GameObject particlePrefab;
     [SerializeField] private Vector2 particleBoundaries;
 
@@ -40,7 +40,6 @@ public class TimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (stop) return;
         if (player.GetGameOver())
         {
             stop = true;
