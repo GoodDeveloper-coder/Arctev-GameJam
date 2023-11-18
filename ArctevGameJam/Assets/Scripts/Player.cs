@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private AudioSource musicYang;
     [SerializeField] private AudioSource musicYin;
-    [SerializeField] private AudioSource musicGameOver;
+
     [SerializeField] private AudioSource GameOverSound;
     [SerializeField] private AudioSource JumpSound;
     [SerializeField] private AudioSource FlipHorizonSound;
@@ -57,24 +57,20 @@ public class Player : MonoBehaviour
         animatorYin.PlayWalkAnimation();
         animatorYang.PlayWalkAnimation();
         musicYin.volume = 0;
-        musicGameOver.volume = 0;
         musicYin.Play();
         musicYang.Play();
-        musicGameOver.Play();
         rbYin = playerYin.GetComponent<Rigidbody2D>();
         rbYang = playerYang.GetComponent<Rigidbody2D>();
         generator.SetYin(true);
-        //onGround = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!((gameOver ? musicGameOver : horizonFlipped ? musicYin : musicYang).isPlaying))
+        if (!((horizonFlipped ? musicYin : musicYang).isPlaying))
         {
             musicYin.Play();
             musicYang.Play();
-            musicGameOver.Play();
         }
         Vector3 cameraPosition = Camera.main.transform.position;
         Rigidbody2D rb = horizonFlipped ? rbYang : rbYin;
@@ -100,8 +96,6 @@ public class Player : MonoBehaviour
                 horizonFlipped = !horizonFlipped;
                 generator.HideAll();
                 (horizonFlipped ? playerYang : playerYin).SetActive(true);
-                //playerYin.SetActive(!horizonFlipped);
-                //playerYang.SetActive(horizonFlipped);
                 backgroundYin.SetActive(horizonFlipped);
                 backgroundYang.SetActive(!horizonFlipped);
                 textYin.SetActive(horizonFlipped);
@@ -208,9 +202,6 @@ public class Player : MonoBehaviour
         iconYin.SetActive(false);
         gameOverScreen.SetActive(true);
         GameOverSound.Play();
-        musicYin.volume = 0;
-        musicYang.volume = 0;
-        musicGameOver.volume = 1;
         gameOver = true;
     }
 }

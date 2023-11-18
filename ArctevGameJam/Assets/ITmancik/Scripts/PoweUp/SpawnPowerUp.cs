@@ -17,9 +17,17 @@ public class SpawnPowerUp : MonoBehaviour
     {
         for (int i = 0; i < 8; i++) Destroy((Random.Range(0, 2) == 0 ? carrotYinInstances : carrotYangInstances)[i]);
         GameObject powerup;
-        int r = Random.Range(0, (powerupYinInstances.Length + powerupYangInstances.Length) * 5);
-        for (int i = 0; i < powerupYinInstances.Length; i++) if (r != i) Destroy(powerupYinInstances[i]);
-        for (int i = 0; i < powerupYangInstances.Length; i++) if (r != i + powerupYinInstances.Length) Destroy(powerupYangInstances[i]);
+        int r = Random.Range(0, (powerupYinInstances.Length + powerupYangInstances.Length) * 2);
+        for (int i = 0; i < powerupYinInstances.Length; i++)
+        {
+            if (r == i) powerupYinInstances[i].GetComponent<JumpPowerUp>().SetPowerupType(Random.Range(0, powerupTypes));
+            else Destroy(powerupYinInstances[i]);
+        }
+        for (int i = 0; i < powerupYangInstances.Length; i++)
+        {
+            if (r == i + powerupYinInstances.Length) powerupYangInstances[i].GetComponent<JumpPowerUp>().SetPowerupType(Random.Range(0, powerupTypes));
+            else Destroy(powerupYangInstances[i]);
+        }
 
         /*
         if (Random.RandomRange(1, 2) == 1)
