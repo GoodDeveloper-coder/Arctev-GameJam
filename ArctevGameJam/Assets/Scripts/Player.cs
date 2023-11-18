@@ -222,7 +222,7 @@ public class Player : MonoBehaviour
         do
         {
             for (int i = 0; i < gameOverScreenFrames.Length; i++) gameOverScreenFrames[i].SetActive(i == frame);
-            yield return new WaitForSeconds(0.08112f);
+            yield return new WaitForSeconds(0.08111f);
             if (frame == 1) forward = true;
             else if (frame == gameOverScreenFrames.Length - 1) forward = false;
             if (forward) frame++;
