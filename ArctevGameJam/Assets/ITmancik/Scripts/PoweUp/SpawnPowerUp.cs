@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class SpawnPowerUp : MonoBehaviour
 {
-    public Transform[] spawnPosWhite;
-    public Transform[] spawnPosDark;
+    [SerializeField] private GameObject[] powerupYinInstances;
+    [SerializeField] private GameObject[] powerupYangInstances;
 
-    public GameObject DarkPowerUpPrefab;
-    public GameObject WhitePowerUpPrefab;
+    [SerializeField] private GameObject[] carrotYinInstances;
+    [SerializeField] private GameObject[] carrotYangInstances;
+
+    [SerializeField] private int powerupTypes;
 
     // Start is called before the first frame update
     void Start()
     {
+        for (int i = 0; i < 8; i++) Destroy((Random.Range(0, 2) == 0 ? carrotYinInstances : carrotYangInstances)[i]);
+        GameObject powerup;
+        int r = Random.Range(0, (powerupYinInstances.Length + powerupYangInstances.Length) * 5);
+        for (int i = 0; i < powerupYinInstances.Length; i++) if (r != i) Destroy(powerupYinInstances[i]);
+        for (int i = 0; i < powerupYangInstances.Length; i++) if (r != i + powerupYinInstances.Length) Destroy(powerupYangInstances[i]);
+
+        /*
         if (Random.RandomRange(1, 2) == 1)
         {
             GameObject WhitePowerUp = Instantiate(DarkPowerUpPrefab, spawnPosWhite[Random.RandomRange(0, spawnPosWhite.Length)].position, Quaternion.identity);
@@ -24,6 +33,7 @@ public class SpawnPowerUp : MonoBehaviour
             GameObject DarkPowerUp = Instantiate(WhitePowerUpPrefab, spawnPosDark[Random.RandomRange(0, spawnPosDark.Length)].position, Quaternion.identity);
             DarkPowerUp.transform.parent = this.transform;
         }
+        */
     }
 
     // Update is called once per frame

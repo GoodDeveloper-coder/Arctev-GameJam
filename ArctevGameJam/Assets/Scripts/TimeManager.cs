@@ -15,6 +15,7 @@ public class TimeManager : MonoBehaviour
 
     private float currentSpeed;
     private float score;
+    private bool multiplierPowerup;
     private bool stop;
 
     // Start is called before the first frame update
@@ -42,7 +43,20 @@ public class TimeManager : MonoBehaviour
 
     public void AddScore(float points)
     {
-        score += points;
+        score += (multiplierPowerup ? points * 2 : points);
         foreach (TextMeshProUGUI text in scoreText) text.text = (int)score + "";
+    }
+
+    public void GetMultiplierPowerup(float duration)
+    {
+        StartCoroutine(MultiplierPowerup(duration));
+    }
+
+    private IEnumerator MultiplierPowerup(float duration)
+    {
+        multiplierPowerup = true;
+        yield return new WaitForSeconds(duration);
+        Camera.main.projectionMatrix *= Matrix4x4.Scale(new Vector3(-1, 1, 1));
+        multiplierPowerup = false;
     }
 }

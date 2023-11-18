@@ -4,24 +4,21 @@ using UnityEngine;
 
 public class CarrotPrefab : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    public float carrotSpeed = 0.5f;
-
     private TimeManager timeManager;
-
+    private AudioSource CollectSound;
     public float CarrotAddScore = 20f;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         timeManager = GameObject.Find("Time Manager").GetComponent<TimeManager>();
+        CollectSound = GameObject.Find("CollectCarrotSound").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = transform.right * -carrotSpeed;
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,6 +27,7 @@ public class CarrotPrefab : MonoBehaviour
         {
             timeManager.AddScore(CarrotAddScore);
             GlobalScript.carrotsScore++;
+            CollectSound.Play();
             Destroy(this.gameObject);
         }
     }

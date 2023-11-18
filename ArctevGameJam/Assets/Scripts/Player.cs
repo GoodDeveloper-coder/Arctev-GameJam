@@ -23,21 +23,26 @@ public class Player : MonoBehaviour
 
     [SerializeField] private AudioSource musicYang;
     [SerializeField] private AudioSource musicYin;
+    [SerializeField] private AudioSource musicGameOver;
     [SerializeField] private AudioSource GameOverSound;
     [SerializeField] private AudioSource JumpSound;
+    [SerializeField] private AudioSource FlipHorizonSound;
+    [SerializeField] private AudioSource PowerupExpireSound;
 
     [SerializeField] private float cameraOffsetX;
-    public float jumpForce;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float powerupJumpForce;
     [SerializeField] private float jumpMultiplier;
     [SerializeField] private float fallMultiplier;
 
-    [SerializeField] private float triggerDuration;
+    [SerializeField] private float triggerCountdown;
 
     private Rigidbody2D rbYin;
     private Rigidbody2D rbYang;
     private bool onGround;
     private bool falling;
     private bool horizonFlipped;
+    private bool jumpPowerup;
     private float triggerTime;
     private bool gameOver;
 
@@ -52,8 +57,10 @@ public class Player : MonoBehaviour
         animatorYin.PlayWalkAnimation();
         animatorYang.PlayWalkAnimation();
         musicYin.volume = 0;
+        musicGameOver.volume = 0;
         musicYin.Play();
         musicYang.Play();
+        musicGameOver.Play();
         rbYin = playerYin.GetComponent<Rigidbody2D>();
         rbYang = playerYang.GetComponent<Rigidbody2D>();
         generator.SetYin(true);
@@ -63,10 +70,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!((horizonFlipped ? musicYin : musicYang).isPlaying))
+        if (!((gameOver ? musicGameOver : horizonFlipped ? musicYin : musicYang).isPlaying))
         {
             musicYin.Play();
             musicYang.Play();
+            musicGameOver.Play();
         }
         Vector3 cameraPosition = Camera.main.transform.position;
         Rigidbody2D rb = horizonFlipped ? rbYang : rbYin;
@@ -108,12 +116,13 @@ public class Player : MonoBehaviour
                 generator.SetYin(!horizonFlipped);
                 musicYang.volume = horizonFlipped ? 0 : 1;
                 musicYin.volume = horizonFlipped ? 1 : 0;
+                FlipHorizonSound.Play();
             }
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
                 rb.velocity = new Vector2();
-                rb.AddForce(Vector2.up * jumpForce * (horizonFlipped ? -1 : 1), ForceMode2D.Impulse);
-                JumpSound.Play();   
+                rb.AddForce(Vector2.up * (jumpPowerup ? powerupJumpForce : jumpForce) * (horizonFlipped ? -1 : 1), ForceMode2D.Impulse);
+                JumpSound.Play();
                 animatorYin.PlayJumpAnimation();
                 animatorYang.PlayJumpAnimation();
             }
@@ -150,7 +159,7 @@ public class Player : MonoBehaviour
         }
         else if (collider == (horizonFlipped ? colliderYang : colliderYin))
         {
-            if (other.tag == "Platform" || other.tag == "Hazard") triggerTime = triggerDuration;
+            if (other.tag == "Platform" || other.tag == "Hazard") triggerTime = triggerCountdown;
         }
     }
 
@@ -160,6 +169,32 @@ public class Player : MonoBehaviour
         else if (collider == (horizonFlipped ? colliderYang : colliderYin) && triggerTime > 0) triggerTime = 0;
     }
     
+    public void GetJumpPowerup(float duration)
+    {
+        StartCoroutine(JumpPowerup(duration));
+    }
+
+    private IEnumerator JumpPowerup(float duration)
+    {
+        jumpPowerup = true;
+        yield return new WaitForSeconds(duration);
+        jumpPowerup = false;
+        PowerupExpireSound.Play();
+    }
+
+    public void GetReversePowerup(float duration)
+    {
+        StartCoroutine(ReversePowerup(duration));
+    }
+
+    private IEnumerator ReversePowerup(float duration)
+    {
+        Camera.main.projectionMatrix *= Matrix4x4.Scale(new Vector3(-1, 1, 1));
+        yield return new WaitForSeconds(duration);
+        Camera.main.projectionMatrix *= Matrix4x4.Scale(new Vector3(-1, 1, 1));
+        PowerupExpireSound.Play();
+    }
+
     public bool GetGameOver()
     {
         return gameOver;
@@ -173,6 +208,9 @@ public class Player : MonoBehaviour
         iconYin.SetActive(false);
         gameOverScreen.SetActive(true);
         GameOverSound.Play();
+        musicYin.volume = 0;
+        musicYang.volume = 0;
+        musicGameOver.volume = 1;
         gameOver = true;
     }
 }
