@@ -14,7 +14,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay.unity
     guid: b4bb108834ff0024bb2161cd82dfcd0a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SecretScene.unity
     guid: b9d6e7e8d24175642abeb7a1569f0816
+  - enabled: 1
+    path: Assets/Scenes/GiantEasterEggScene.unity
+    guid: a5deb8cbada9d3842856a416c1faa81f
+  - enabled: 1
+    path: Assets/Scenes/MirrorEasterEggScene.unity
+    guid: 896913ce1f2c74b4aa2434c2e443797f
+  - enabled: 1
+    path: Assets/Scenes/MoonwalkEasterEggScene.unity
+    guid: c5c390f679687934899382a6c31f3e6e
+  - enabled: 1
+    path: Assets/Scenes/CarrotEasterEggScene.unity
+    guid: 9b62af4492ea42743b9f39cf9809d93b
   m_configObjects: {}

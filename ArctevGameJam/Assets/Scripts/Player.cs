@@ -39,6 +39,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float triggerCountdown;
 
+    [SerializeField] private bool mirror;
+
     private Rigidbody2D rbYin;
     private Rigidbody2D rbYang;
     private bool onGround;
@@ -51,6 +53,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (mirror) Camera.main.projectionMatrix *= Matrix4x4.Scale(new Vector3(-1, 1, 1));
         playerYang.SetActive(false);
         backgroundYin.SetActive(false);
         textYin.SetActive(false);

@@ -2343,7 +2343,7 @@ SpriteRenderer:
   m_SortingOrder: 6
   m_Sprite: {fileID: -1397102102, guid: 693a873d7a92cc049b059d598d8168ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 0.6175, y: 0.8333334}
@@ -2427,7 +2427,7 @@ SpriteRenderer:
   m_SortingOrder: 6
   m_Sprite: {fileID: 451199830, guid: b5a7c86422ef8bf4eaddee1483c279cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.6175, y: 0.8333334}
@@ -3373,7 +3373,6 @@ GameObject:
   - component: {fileID: 940252248}
   - component: {fileID: 940252247}
   - component: {fileID: 940252246}
-  - component: {fileID: 940252249}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3458,20 +3457,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &940252249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 940252245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e145138bdfe681469f5a4439f3be192, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  codewords: []
-  sceneNames: []
 --- !u!1 &946926454
 GameObject:
   m_ObjectHideFlags: 0
@@ -4577,6 +4562,7 @@ MonoBehaviour:
   jumpMultiplier: 2
   fallMultiplier: 2
   triggerCountdown: 0.1
+  mirror: 0
 --- !u!1 &1420672600
 GameObject:
   m_ObjectHideFlags: 0
