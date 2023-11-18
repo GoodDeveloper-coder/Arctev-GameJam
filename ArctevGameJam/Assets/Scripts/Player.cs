@@ -210,9 +210,9 @@ public class Player : MonoBehaviour
         iconYang.SetActive(false);
         iconYin.SetActive(false);
         gameOverScreen.SetActive(true);
-        StartCoroutine(AnimateGameOverScreen());
         GameOverSound.Play();
         gameOver = true;
+        StartCoroutine(AnimateGameOverScreen());
     }
 
     private IEnumerator AnimateGameOverScreen()
