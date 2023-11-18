@@ -3335,7 +3335,7 @@ MonoBehaviour:
   - {fileID: 8282076383627007414, guid: 9ee66af09b02e4b47a68005e8442e79c, type: 3}
   startRoom: {fileID: 1542204839}
   roomLength: 40
-  powerupSlowFactor: 0
+  powerupSlowFactor: 2
 --- !u!61 &907650002
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3470,8 +3470,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e145138bdfe681469f5a4439f3be192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  codewords: []
-  sceneNames: []
 --- !u!1 &946926454
 GameObject:
   m_ObjectHideFlags: 0
@@ -4577,6 +4575,7 @@ MonoBehaviour:
   jumpMultiplier: 2
   fallMultiplier: 2
   triggerCountdown: 0.1
+  mirror: 0
 --- !u!1 &1420672600
 GameObject:
   m_ObjectHideFlags: 0
