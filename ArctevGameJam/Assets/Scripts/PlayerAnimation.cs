@@ -13,8 +13,11 @@ public class PlayerAnimation : MonoBehaviour
 
     [SerializeField] private float initialAnimationSpeed;
 
+    [SerializeField] private float powerupSlowFactor;
+
     private float animationSpeedFactor;
-    
+    private bool slowPowerup;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,7 +62,7 @@ public class PlayerAnimation : MonoBehaviour
             targetSpriteRenderer.sprite = walkSprites[sprite];
             if (targetSpriteMask != null) targetSpriteMask.sprite = walkSprites[sprite];
             sprite = (sprite + 1) % walkSprites.Length;
-            yield return new WaitForSeconds(1f / (initialAnimationSpeed * animationSpeedFactor));
+            yield return new WaitForSeconds(1f / (initialAnimationSpeed * animationSpeedFactor * (slowPowerup ? powerupSlowFactor : 1)));
         }
     }
 
@@ -73,5 +76,10 @@ public class PlayerAnimation : MonoBehaviour
             sprite++;
             yield return new WaitForSeconds(1f / (initialAnimationSpeed * animationSpeedFactor));
         }
+    }
+
+    public void SetSlowPowerup(bool s)
+    {
+        slowPowerup = s;
     }
 }

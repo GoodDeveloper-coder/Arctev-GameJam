@@ -445,10 +445,11 @@ MonoBehaviour:
   - {fileID: 1635222492}
   - {fileID: 695680873}
   - {fileID: 1495743811}
+  PowerupExpireSound: {fileID: 0}
   particlePrefab: {fileID: 2336217027740122739, guid: 99d01ae26f6c27b438aed74ce63cba49, type: 3}
   particleBoundaries: {x: 14, y: 7}
   initialSpeed: 2
-  speedIncrementPerSecond: 0.05
+  speedIncrementPerSecond: 0.025
   initialParticleFrequency: 1
 --- !u!4 &214290307
 Transform:
@@ -6167,6 +6168,10 @@ PrefabInstance:
       propertyPath: musicYang
       value: 
       objectReference: {fileID: 310911654}
+    - target: {fileID: 2165677210195165507, guid: 045e1bf10ae14d64fbc48f3812037ca6, type: 3}
+      propertyPath: timeManager
+      value: 
+      objectReference: {fileID: 214290306}
     - target: {fileID: 2165677210195165507, guid: 045e1bf10ae14d64fbc48f3812037ca6, type: 3}
       propertyPath: GameOverSound
       value: 

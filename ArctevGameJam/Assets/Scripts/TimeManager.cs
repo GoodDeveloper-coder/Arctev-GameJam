@@ -9,7 +9,9 @@ public class TimeManager : MonoBehaviour
     
     [SerializeField] private RoomGenerator generator;
     [SerializeField] private TextMeshProUGUI[] scoreText;
-    
+
+    [SerializeField] private AudioSource PowerupExpireSound;
+
     [SerializeField] private GameObject particlePrefab;
     [SerializeField] private Vector2 particleBoundaries;
 
@@ -88,8 +90,8 @@ public class TimeManager : MonoBehaviour
     {
         multiplierPowerup = true;
         yield return new WaitForSeconds(duration);
-        Camera.main.projectionMatrix *= Matrix4x4.Scale(new Vector3(-1, 1, 1));
         multiplierPowerup = false;
+        PowerupExpireSound.Play();
     }
 
     private IEnumerator SpawnParticles()

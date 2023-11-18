@@ -20,12 +20,17 @@ public class RoomGenerator : MonoBehaviour
     private bool yin;
     private bool slowPowerup;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         currentRoomIndex = -1;
         nextRoom = startRoom;
         SetYin(true);
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame

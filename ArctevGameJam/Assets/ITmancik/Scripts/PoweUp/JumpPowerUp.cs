@@ -45,6 +45,7 @@ public class JumpPowerUp : MonoBehaviour
                     player.GetReversePowerup(powerupDuration);
                     break;
                 case 2:
+                    player.GetSlowPowerup(powerupDuration);
                     generator.GetSlowPowerup(powerupDuration);
                     break;
                 case 3:

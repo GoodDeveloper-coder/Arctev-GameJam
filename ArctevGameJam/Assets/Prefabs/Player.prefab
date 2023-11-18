@@ -155,6 +155,7 @@ MonoBehaviour:
   - {fileID: 1661396419, guid: 693a873d7a92cc049b059d598d8168ba, type: 3}
   fallSprite: {fileID: -1658514704, guid: 693a873d7a92cc049b059d598d8168ba, type: 3}
   initialAnimationSpeed: 7.5
+  powerupSlowFactor: 0
 --- !u!1 &2165677209753172340
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +574,7 @@ MonoBehaviour:
   jumpMultiplier: 2
   fallMultiplier: 2
   triggerCountdown: 0.2
+  gameOverScreenAnimationSpeed: 11.872
   mirror: 0
 --- !u!1 &2165677210358346980
 GameObject:
@@ -788,3 +790,4 @@ MonoBehaviour:
   - {fileID: 766428990, guid: b5a7c86422ef8bf4eaddee1483c279cf, type: 3}
   fallSprite: {fileID: 404828145, guid: b5a7c86422ef8bf4eaddee1483c279cf, type: 3}
   initialAnimationSpeed: 7.5
+  powerupSlowFactor: 0

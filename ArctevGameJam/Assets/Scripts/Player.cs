@@ -200,6 +200,21 @@ public class Player : MonoBehaviour
         PowerupExpireSound.Play();
     }
 
+    public void GetSlowPowerup(float duration)
+    {
+        StartCoroutine(SlowPowerup(duration));
+    }
+
+    private IEnumerator SlowPowerup(float duration)
+    {
+        animatorYin.SetSlowPowerup(true);
+        animatorYang.SetSlowPowerup(true);
+        yield return new WaitForSeconds(duration);
+        PowerupExpireSound.Play();
+        animatorYin.SetSlowPowerup(false);
+        animatorYang.SetSlowPowerup(false);
+    }
+
     public bool GetGameOver()
     {
         return gameOver;
