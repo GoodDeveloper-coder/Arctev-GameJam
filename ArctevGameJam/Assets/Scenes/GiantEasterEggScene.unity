@@ -6212,7 +6212,7 @@ MonoBehaviour:
   PowerupExpireSound: {fileID: 0}
   particlePrefab: {fileID: 2336217027740122739, guid: 99d01ae26f6c27b438aed74ce63cba49, type: 3}
   particleBoundaries: {x: 14, y: 7}
-  initialSpeed: 2
+  initialSpeed: 1.5
   speedIncrementPerSecond: 0.025
   initialParticleFrequency: 1
 --- !u!4 &2144999862
