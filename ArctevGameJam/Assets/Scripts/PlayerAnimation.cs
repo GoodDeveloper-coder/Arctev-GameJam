@@ -62,7 +62,7 @@ public class PlayerAnimation : MonoBehaviour
             targetSpriteRenderer.sprite = walkSprites[sprite];
             if (targetSpriteMask != null) targetSpriteMask.sprite = walkSprites[sprite];
             sprite = (sprite + 1) % walkSprites.Length;
-            yield return new WaitForSeconds(1f / (initialAnimationSpeed * animationSpeedFactor * (slowPowerup ? powerupSlowFactor : 1)));
+            yield return new WaitForSeconds((slowPowerup ? powerupSlowFactor : 1f) / (initialAnimationSpeed * animationSpeedFactor));
         }
     }
 

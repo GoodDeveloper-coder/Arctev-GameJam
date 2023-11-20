@@ -17,8 +17,8 @@ public class SpawnPowerUp : MonoBehaviour
         int r = Random.Range(0, powerupInstances.Length * 1);
         for (int i = 0; i < powerupInstances.Length; i++)
         {
-            if (r == i) powerupInstances[i].GetComponent<JumpPowerUp>().SetPowerupType(Random.Range(0, powerupTypes));
-            else Destroy(powerupInstances[i]);
+            //if (r == i) powerupInstances[i].GetComponent<JumpPowerUp>().SetPowerupType(Random.Range(0, powerupTypes));
+            //else Destroy(powerupInstances[i]);
         }
 
         /*
