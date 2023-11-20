@@ -1296,9 +1296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c477f87b237724b8c9c2899d9856eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerupYinInstances:
+  powerupInstances:
   - {fileID: 744170403020980506}
-  powerupYangInstances: []
   carrotYinInstances:
   - {fileID: 6883381450285275113}
   - {fileID: 6744254837727960989}

@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class SpawnPowerUp : MonoBehaviour
 {
-    [SerializeField] private GameObject[] powerupYinInstances;
-    [SerializeField] private GameObject[] powerupYangInstances;
-
+    [SerializeField] private GameObject[] powerupInstances;
     [SerializeField] private GameObject[] carrotYinInstances;
     [SerializeField] private GameObject[] carrotYangInstances;
 
@@ -16,16 +14,11 @@ public class SpawnPowerUp : MonoBehaviour
     void Start()
     {
         for (int i = 0; i < 8; i++) Destroy((Random.Range(0, 2) == 0 ? carrotYinInstances : carrotYangInstances)[i]);
-        int r = Random.Range(0, (powerupYinInstances.Length + powerupYangInstances.Length) * 2);
-        for (int i = 0; i < powerupYinInstances.Length; i++)
+        int r = Random.Range(0, powerupInstances.Length * 1);
+        for (int i = 0; i < powerupInstances.Length; i++)
         {
-            if (r == i) powerupYinInstances[i].GetComponent<JumpPowerUp>().SetPowerupType(Random.Range(0, powerupTypes));
-            else Destroy(powerupYinInstances[i]);
-        }
-        for (int i = 0; i < powerupYangInstances.Length; i++)
-        {
-            if (r == i + powerupYinInstances.Length) powerupYangInstances[i].GetComponent<JumpPowerUp>().SetPowerupType(Random.Range(0, powerupTypes));
-            else Destroy(powerupYangInstances[i]);
+            if (r == i) powerupInstances[i].GetComponent<JumpPowerUp>().SetPowerupType(Random.Range(0, powerupTypes));
+            else Destroy(powerupInstances[i]);
         }
 
         /*
