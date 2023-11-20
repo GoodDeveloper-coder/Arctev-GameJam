@@ -184,7 +184,7 @@ public class Player : MonoBehaviour
         jumpPowerup = true;
         yield return new WaitForSeconds(duration);
         jumpPowerup = false;
-        PowerupExpireSound.Play();
+        if (!gameOver) PowerupExpireSound.Play();
     }
 
     public void GetReversePowerup(float duration)
@@ -197,7 +197,7 @@ public class Player : MonoBehaviour
         Camera.main.projectionMatrix *= Matrix4x4.Scale(new Vector3(-1, 1, 1));
         yield return new WaitForSeconds(duration);
         Camera.main.projectionMatrix *= Matrix4x4.Scale(new Vector3(-1, 1, 1));
-        PowerupExpireSound.Play();
+        if (!gameOver) PowerupExpireSound.Play();
     }
 
     public void GetSlowPowerup(float duration)
@@ -210,7 +210,7 @@ public class Player : MonoBehaviour
         animatorYin.SetSlowPowerup(true);
         animatorYang.SetSlowPowerup(true);
         yield return new WaitForSeconds(duration);
-        PowerupExpireSound.Play();
+        if (!gameOver) PowerupExpireSound.Play();
         animatorYin.SetSlowPowerup(false);
         animatorYang.SetSlowPowerup(false);
     }

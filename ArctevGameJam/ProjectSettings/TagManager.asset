@@ -10,6 +10,7 @@ TagManager:
   - Platform
   - WhiteParticle
   - DarkParticle
+  - Hazard
   layers:
   - Default
   - TransparentFX

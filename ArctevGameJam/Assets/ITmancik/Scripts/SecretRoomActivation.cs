@@ -10,6 +10,7 @@ public class SecretRoomActivation : MonoBehaviour
     private int mirrorIndex;
     private int moonwalkIndex;
     private int carrotIndex;
+    private int velocityIndex;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class SecretRoomActivation : MonoBehaviour
             mirrorIndex = 0;
             moonwalkIndex = 0;
             carrotIndex = 0;
+            velocityIndex = 0;
         }
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -36,6 +38,8 @@ public class SecretRoomActivation : MonoBehaviour
             else mirrorIndex = 0;
             moonwalkIndex = 0;
             carrotIndex = 0;
+            if (velocityIndex == 5) velocityIndex++;
+            else velocityIndex = 0;
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -46,6 +50,7 @@ public class SecretRoomActivation : MonoBehaviour
             else moonwalkIndex = 0;
             if (carrotIndex == 1) carrotIndex++;
             else carrotIndex = 0;
+            velocityIndex = 0;
         }
         if (Input.GetKeyDown(KeyCode.N))
         {
@@ -55,6 +60,7 @@ public class SecretRoomActivation : MonoBehaviour
             if (moonwalkIndex == 3) moonwalkIndex++;
             else moonwalkIndex = 0;
             carrotIndex = 0;
+            velocityIndex = 0;
         }
         if (Input.GetKeyDown(KeyCode.T))
         {
@@ -64,6 +70,8 @@ public class SecretRoomActivation : MonoBehaviour
             moonwalkIndex = 0;
             if (carrotIndex == 5) SceneManager.LoadScene("CarrotEasterEggScene");
             else carrotIndex = 0;
+            if (velocityIndex == 6) velocityIndex++;
+            else velocityIndex = 0;
         }
         if (Input.GetKeyDown(KeyCode.M))
         {
@@ -73,6 +81,7 @@ public class SecretRoomActivation : MonoBehaviour
             if (moonwalkIndex == 0) moonwalkIndex++;
             else moonwalkIndex = 0;
             carrotIndex = 0;
+            velocityIndex = 0;
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -83,6 +92,7 @@ public class SecretRoomActivation : MonoBehaviour
             moonwalkIndex = 0;
             if (carrotIndex == 2 || carrotIndex == 3) carrotIndex++;
             else carrotIndex = 0;
+            velocityIndex = 0;
         }
         if (Input.GetKeyDown(KeyCode.O))
         {
@@ -93,6 +103,8 @@ public class SecretRoomActivation : MonoBehaviour
             else moonwalkIndex = 0;
             if (carrotIndex == 4) carrotIndex++;
             else carrotIndex = 0;
+            if (velocityIndex == 3) velocityIndex++;
+            else velocityIndex = 0;
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -101,6 +113,7 @@ public class SecretRoomActivation : MonoBehaviour
             if (moonwalkIndex == 4) moonwalkIndex++;
             else moonwalkIndex = 0;
             carrotIndex = 0;
+            velocityIndex = 0;
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
@@ -109,6 +122,8 @@ public class SecretRoomActivation : MonoBehaviour
             if (moonwalkIndex == 6) moonwalkIndex++;
             else moonwalkIndex = 0;
             carrotIndex = 0;
+            if (velocityIndex == 2) velocityIndex++;
+            else velocityIndex = 0;
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
@@ -117,6 +132,7 @@ public class SecretRoomActivation : MonoBehaviour
             if (moonwalkIndex == 7) SceneManager.LoadScene("MoonwalkEasterEggScene");
             else moonwalkIndex = 0;
             carrotIndex = 0;
+            velocityIndex = 0;
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
@@ -125,8 +141,36 @@ public class SecretRoomActivation : MonoBehaviour
             moonwalkIndex = 0;
             if (carrotIndex == 0) carrotIndex++;
             else carrotIndex = 0;
+            if (velocityIndex == 4) velocityIndex++;
+            else velocityIndex = 0;
         }
-        //Debug.Log(mirrorIndex);
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            giantIndex = 0;
+            mirrorIndex = 0;
+            moonwalkIndex = 0;
+            carrotIndex = 0;
+            if (velocityIndex == 0) velocityIndex++;
+            else velocityIndex = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            giantIndex = 0;
+            mirrorIndex = 0;
+            moonwalkIndex = 0;
+            carrotIndex = 0;
+            if (velocityIndex == 1) velocityIndex++;
+            else velocityIndex = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            giantIndex = 0;
+            mirrorIndex = 0;
+            moonwalkIndex = 0;
+            carrotIndex = 0;
+            if (velocityIndex == 7) SceneManager.LoadScene("VelocityEasterEggScene");
+            else velocityIndex = 0;
+        }
 
         /*
         if (Input.GetKeyDown(KeyCode.R) && nextMove == 0) nextMove++;

@@ -448,7 +448,7 @@ MonoBehaviour:
   PowerupExpireSound: {fileID: 0}
   particlePrefab: {fileID: 2336217027740122739, guid: 99d01ae26f6c27b438aed74ce63cba49, type: 3}
   particleBoundaries: {x: 14, y: 7}
-  initialSpeed: 1.5
+  initialSpeed: 3
   speedIncrementPerSecond: 0.025
   initialParticleFrequency: 1
 --- !u!4 &214290307
@@ -2956,7 +2956,6 @@ GameObject:
   - component: {fileID: 940252248}
   - component: {fileID: 940252247}
   - component: {fileID: 940252246}
-  - component: {fileID: 940252249}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3040,18 +3039,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &940252249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 940252245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e145138bdfe681469f5a4439f3be192, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &946926454
 GameObject:
   m_ObjectHideFlags: 0
@@ -6021,6 +6008,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2165677209213529410, guid: 045e1bf10ae14d64fbc48f3812037ca6, type: 3}
+      propertyPath: initialAnimationSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2165677210195165506, guid: 045e1bf10ae14d64fbc48f3812037ca6, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -6126,6 +6117,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 694243688}
     - target: {fileID: 2165677210195165507, guid: 045e1bf10ae14d64fbc48f3812037ca6, type: 3}
+      propertyPath: gameOverScreenAnimationSpeed
+      value: 23.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2165677210195165507, guid: 045e1bf10ae14d64fbc48f3812037ca6, type: 3}
       propertyPath: gameOverScreenFrames.Array.data[0]
       value: 
       objectReference: {fileID: 1490352342}
@@ -6148,6 +6143,10 @@ PrefabInstance:
     - target: {fileID: 2165677210195165511, guid: 045e1bf10ae14d64fbc48f3812037ca6, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2165677210946696924, guid: 045e1bf10ae14d64fbc48f3812037ca6, type: 3}
+      propertyPath: initialAnimationSpeed
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 045e1bf10ae14d64fbc48f3812037ca6, type: 3}

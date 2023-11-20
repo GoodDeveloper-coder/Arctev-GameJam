@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CarrotEasterEggScene.unity
     guid: 9b62af4492ea42743b9f39cf9809d93b
+  - enabled: 1
+    path: Assets/Scenes/VelocityEasterEggScene.unity
+    guid: ccddc2457de9be048bc7445304b533b3
   m_configObjects: {}
