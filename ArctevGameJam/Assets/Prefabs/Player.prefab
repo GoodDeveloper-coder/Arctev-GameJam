@@ -568,13 +568,13 @@ MonoBehaviour:
   JumpSound: {fileID: 0}
   FlipHorizonSound: {fileID: 0}
   PowerupExpireSound: {fileID: 0}
-  cameraOffsetX: 5
+  cameraOffsetX: 7.5
   jumpForce: 7
   powerupJumpForce: 10
   jumpMultiplier: 2
   fallMultiplier: 2
   triggerCountdown: 0.2
-  gameOverScreenAnimationSpeed: 11.9
+  gameOverScreenAnimationSpeed: 12
   mirror: 0
 --- !u!1 &2165677210358346980
 GameObject:

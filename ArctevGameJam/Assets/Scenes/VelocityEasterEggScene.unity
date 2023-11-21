@@ -2918,6 +2918,7 @@ MonoBehaviour:
   - {fileID: 8282076383627007414, guid: 9ee66af09b02e4b47a68005e8442e79c, type: 3}
   startRoom: {fileID: 1542204839}
   roomLength: 40
+  flipDelay: 0.05
   powerupSlowFactor: 2
 --- !u!61 &907650002
 BoxCollider2D:

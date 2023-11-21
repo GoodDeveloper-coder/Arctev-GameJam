@@ -9,6 +9,7 @@ public class RoomGenerator : MonoBehaviour
     [SerializeField] private GameObject startRoom;
 
     [SerializeField] private float roomLength;
+    [SerializeField] private float flipDelay;
     [SerializeField] private float powerupSlowFactor;
 
     private GameObject previousRoom;
@@ -19,6 +20,7 @@ public class RoomGenerator : MonoBehaviour
     private float speed;
     private bool yin;
     private bool slowPowerup;
+    private bool paused;
 
     void Awake()
     {
@@ -36,16 +38,17 @@ public class RoomGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    void FixedUpdate()
-    {
+        if (paused) return;
         float s = slowPowerup ? speed / powerupSlowFactor : speed;
         transform.position -= Vector3.right * s * Time.deltaTime;
         if (previousRoom != null) previousRoom.transform.position -= Vector3.right * s * Time.deltaTime;
         if (currentRoom != null) currentRoom.transform.position -= Vector3.right * s * Time.deltaTime;
         nextRoom.transform.position -= Vector3.right * s * Time.deltaTime;
+    }
+
+    void FixedUpdate()
+    {
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -87,6 +90,14 @@ public class RoomGenerator : MonoBehaviour
     public void SetYin(bool y)
     {
         yin = y;
+        StartCoroutine(WaitToSetYin());
+    }
+
+    private IEnumerator WaitToSetYin()
+    {
+        paused = true;
+        yield return new WaitForSeconds(flipDelay);
+        paused = false;
         if (previousRoom != null)
         {
             previousRoom.transform.Find("Yin").gameObject.SetActive(yin);
