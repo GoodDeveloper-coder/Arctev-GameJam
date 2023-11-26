@@ -3182,10 +3182,10 @@ MonoBehaviour:
   - {fileID: 1635417744}
   - {fileID: 121210332}
   - {fileID: 1692420203}
-  PowerupExpireSound: {fileID: 0}
+  PowerupExpireSound: {fileID: 1742085412}
   particlePrefab: {fileID: 2336217027740122739, guid: 99d01ae26f6c27b438aed74ce63cba49, type: 3}
   particleBoundaries: {x: 14, y: 7}
-  initialSpeed: 1.5
+  initialSpeed: 2
   speedIncrementPerSecond: 0.025
   initialParticleFrequency: 1
 --- !u!4 &1126173281

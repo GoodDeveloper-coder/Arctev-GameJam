@@ -568,7 +568,7 @@ MonoBehaviour:
   JumpSound: {fileID: 0}
   FlipHorizonSound: {fileID: 0}
   PowerupExpireSound: {fileID: 0}
-  cameraOffsetX: 7.5
+  cameraOffsetX: 6.25
   jumpForce: 7
   powerupJumpForce: 10
   jumpMultiplier: 2
